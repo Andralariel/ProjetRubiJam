@@ -13,9 +13,14 @@ public class PlayerController : MonoBehaviour
     
     public void Move(InputAction.CallbackContext ctx)
     {
-        var direction = ctx.ReadValue<Vector2>();
-        rbMonk.AddForce(new Vector3(direction.x,0,direction.y)*accel,ForceMode.Impulse);
+        if (!ctx.performed) return;
+        
+        Vector3 direction = ctx.ReadValue<Vector2>();
+        direction = new Vector3(direction.x, 0, direction.y);
+        rbMonk.AddForce(direction*accel,ForceMode.Impulse);
         if (rbMonk.velocity.magnitude > maxSpeed) rbMonk.velocity = rbMonk.velocity.normalized * maxSpeed;
+        
+        transform.rotation = Quaternion.LookRotation(direction);
     }
     
     public void Interact(InputAction.CallbackContext ctx)
