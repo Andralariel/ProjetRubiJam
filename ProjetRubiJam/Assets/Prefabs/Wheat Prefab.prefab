@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheat State 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 4b310d4f6d8ce0e43a8ab4dcb1621eb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6719412830559117439, guid: 4b310d4f6d8ce0e43a8ab4dcb1621eb3,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -302,6 +307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: fb8e382096b065440a30bdc981eb6cdb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6719412830559117439, guid: fb8e382096b065440a30bdc981eb6cdb,
         type: 3}
@@ -443,6 +453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheat State 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4713477968716573866, guid: ffb9e10aeb9ac114d9cc4b346a275e57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -472,6 +487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 396d7da3b6013284099f75e27c9e8d76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6719412830559117439, guid: 396d7da3b6013284099f75e27c9e8d76,
         type: 3}
@@ -557,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 20f57853b02e23746a62e0167025eff9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6719412830559117439, guid: 20f57853b02e23746a62e0167025eff9,
         type: 3}
