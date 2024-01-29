@@ -10,7 +10,7 @@ public class WheatField : MonoBehaviour
     public bool canWheatGrow = true;
     [SerializeField] private float wheatGrowthSpeed = 10f;
     [SerializeField] private float wheatGrowthInterval = 1f;
-    [SerializeField] private float wheatcurrentTimeGrowth = 0f;
+    [SerializeField] private float wheatCurrentTimeGrowth = 0f;
     [SerializeField] private List<GameObject> statesWheat = new(5);
 
     [Header("Harvest")] 
@@ -49,15 +49,15 @@ public class WheatField : MonoBehaviour
         {
             if (wheatGrowth < 100)
             {
-                if (wheatcurrentTimeGrowth >= wheatGrowthInterval)
+                if (wheatCurrentTimeGrowth >= wheatGrowthInterval)
                 {
-                    wheatcurrentTimeGrowth -= wheatGrowthInterval;
+                    wheatCurrentTimeGrowth -= wheatGrowthInterval;
                     wheatGrowth += wheatGrowthSpeed;
                     ChangeWheatState();
                 }
                 else
                 {
-                    wheatcurrentTimeGrowth += Time.deltaTime;
+                    wheatCurrentTimeGrowth += Time.deltaTime;
                 }
             }
             else if (wheatGrowth >= 100f)
