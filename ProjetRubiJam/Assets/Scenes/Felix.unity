@@ -578,11 +578,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6861750947914431903, guid: f773fa833e3ba0b4cbdc44a8ac3f032f,
-        type: 3}
-      propertyPath: wheatSpawnOffset.y
-      value: 1.01
-      objectReference: {fileID: 0}
     - target: {fileID: 6870702316837055374, guid: f773fa833e3ba0b4cbdc44a8ac3f032f,
         type: 3}
       propertyPath: m_LocalPosition.x
