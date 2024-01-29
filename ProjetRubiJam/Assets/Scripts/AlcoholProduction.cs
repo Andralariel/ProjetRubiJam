@@ -7,7 +7,7 @@ public class AlcoholProduction : MonoBehaviour
     public static AlcoholProduction instance;
     
     [Header("Wheat")]
-    [SerializeField] public GameObject propsWheat;
+    public GameObject propsWheat;
 
     
     
