@@ -51,7 +51,8 @@ public class WheatField : MonoBehaviour
                 if (wheatcurrentTimeGrowth >= wheatGrowthInterval)
                 {
                     wheatcurrentTimeGrowth -= wheatGrowthInterval;
-                    wheatGrowth += wheatGrowthSpeed; 
+                    wheatGrowth += wheatGrowthSpeed;
+                    ChangeWheatState();
                 }
                 else
                 {
@@ -69,7 +70,13 @@ public class WheatField : MonoBehaviour
 
     void ChangeWheatState()
     {
-        
+        switch (wheatGrowth)
+        {
+            case 20:
+                
+                break;
+            
+        }
     }
     
     
