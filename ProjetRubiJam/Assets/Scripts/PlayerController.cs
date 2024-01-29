@@ -1,31 +1,18 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private MonkInputAction _monkInputAction;
+    private int _playerIndex;
 
     [SerializeField] private Rigidbody rbMonk;
     [SerializeField] private float accel = 100;
+    [SerializeField] private float maxSpeed = 8;
     
-    private void Awake()
+    public void Move(InputAction.CallbackContext ctx)
     {
-        _monkInputAction = new MonkInputAction();
-    }
-
-    void OnEnable()
-    {
-        _monkInputAction.Enable();
-
-        _monkInputAction.MonkActionMap.Move.performed += context => Move(context.ReadValue<Vector2>());
-    }
-    
-    void OnDisable()
-    {
-        _monkInputAction.Disable();
-    }
-
-    private void Move(Vector2 direction)
-    {
-        rbMonk.AddForce(direction*accel,ForceMode.Impulse);
+        var direction = ctx.ReadValue<Vector2>();
+        rbMonk.AddForce(new Vector3(direction.x,0,direction.y)*accel,ForceMode.Impulse);
+        if (rbMonk.velocity.magnitude > maxSpeed) rbMonk.velocity = rbMonk.velocity.normalized * maxSpeed;
     }
 }
