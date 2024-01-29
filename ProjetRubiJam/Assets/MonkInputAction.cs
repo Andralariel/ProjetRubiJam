@@ -127,7 +127,19 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // MonkInputs
         m_MonkInputs = asset.FindActionMap("MonkInputs", throwIfNotFound: true);
@@ -244,6 +256,15 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
         }
     }
     public MonkInputsActions @MonkInputs => new MonkInputsActions(this);
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
+        {
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
     public interface IMonkInputsActions
     {
         void OnMove(InputAction.CallbackContext context);
