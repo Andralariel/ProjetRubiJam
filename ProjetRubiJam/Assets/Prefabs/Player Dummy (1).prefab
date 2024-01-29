@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbMonk: {fileID: 7002942487584936916}
-  inputMonk: {fileID: 3200368392284569445}
   accel: 2
+  maxSpeed: 8
 --- !u!54 &7002942487584936916
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -199,5 +199,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
