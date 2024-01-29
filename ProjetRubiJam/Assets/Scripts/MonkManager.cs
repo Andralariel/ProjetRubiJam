@@ -8,15 +8,15 @@ public class MonkManager : MonoBehaviour
     public static MonkManager instance;
     
     [Header("Variables")]
-    [SerializeField] public int jaugeMoney = 50;
-    [SerializeField] public int jaugePeopleLove = 50;
-    [SerializeField] public int jaugeGodFaith = 50;
+    [SerializeField] public float jaugeMoney = 50f;
+    [SerializeField] public float jaugePeopleLove = 50f;
+    [SerializeField] public float jaugeGodFaith = 50f;
 
-    [SerializeField] private float timeBeforeDecrease = 5f;
-    [SerializeField] private float currentDurationBeforeDecrease = 0f;
-    [SerializeField] private int valueDecreaseMoney = 1;
-    [SerializeField] private int valueDecreaseLove= 1;
-    [SerializeField] private int valueDecreaseFaith = 1;
+    [SerializeField] private float jaugeDecreaseInterval = 5f;
+    [SerializeField] private float currentTimeBeforeDecrease = 0f;
+    [SerializeField] private float valueDecreaseMoney = 1f;
+    [SerializeField] private float valueDecreaseLove= 1f;
+    [SerializeField] private float valueDecreaseFaith = 1f;
     
 
     private void Awake()
@@ -44,10 +44,10 @@ public class MonkManager : MonoBehaviour
 
     void JaugeManager()
     {
-        if (currentDurationBeforeDecrease >= timeBeforeDecrease)
+        if (currentTimeBeforeDecrease >= jaugeDecreaseInterval)
         {
             Debug.Log("diminution des jauges");
-            currentDurationBeforeDecrease -= timeBeforeDecrease;
+            currentTimeBeforeDecrease -= jaugeDecreaseInterval;
 
             jaugeMoney -= valueDecreaseMoney;
             jaugePeopleLove -= valueDecreaseLove;
@@ -56,7 +56,7 @@ public class MonkManager : MonoBehaviour
         }
         else
         {
-            currentDurationBeforeDecrease += Time.deltaTime; 
+            currentTimeBeforeDecrease += Time.deltaTime; 
         }
     }
     
@@ -73,6 +73,10 @@ public class MonkManager : MonoBehaviour
         else if (jaugeGodFaith <= 0)
         {
             
+        }
+        else
+        {
+            Debug.Log("Tout va relativement bien.");
         }
     }
 
