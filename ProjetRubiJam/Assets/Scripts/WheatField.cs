@@ -29,6 +29,7 @@ public class WheatField : MonoBehaviour
     {
         canWheatGrow = true;
         canWheatHarvest = false;
+        ChangeWheatState();
     }
     
     void Update()
@@ -73,9 +74,24 @@ public class WheatField : MonoBehaviour
         switch (wheatGrowth)
         {
             case 20:
-                
+                statesWheat[0].SetActive(true);
                 break;
-            
+            case 40:
+                statesWheat[0].SetActive(false);
+                statesWheat[1].SetActive(true);
+                break;
+            case 60:
+                statesWheat[1].SetActive(false);
+                statesWheat[2].SetActive(true);
+                break;
+            case 80:
+                statesWheat[2].SetActive(false);
+                statesWheat[3].SetActive(true);
+                break;
+            case 100:
+                statesWheat[3].SetActive(false);
+                statesWheat[4].SetActive(true);
+                break;
         }
     }
     
@@ -89,6 +105,8 @@ public class WheatField : MonoBehaviour
                 Debug.Log("wheat harvested");
                 wheatHarvestCurrentTime -= wheatHarvestInterval;
                 wheatGrowth -= wheatGrowth;
+                ChangeWheatState();
+                statesWheat[4].SetActive(false);
                 
                 canWheatGrow = true;
                 canWheatHarvest = false;
