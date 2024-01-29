@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private int _playerIndex;
     private InteractableObj _currentObj;
     private bool _interacting;
+    [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private Rigidbody rbMonk;
     [SerializeField] private float accel = 100;
@@ -34,11 +35,11 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward.normalized*3,Color.blue);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3))
+        
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 3,layerMask)) //layer interaction
         {
-            if (hit.transform.gameObject.layer != 6) return; //layer 6 = interaction
             _currentObj = hit.transform.GetComponent<InteractableObj>();
-            _currentObj.PressAction();
+            _currentObj.PressAction(this);
             _interacting = true;
         }
     }

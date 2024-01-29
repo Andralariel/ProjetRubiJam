@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2188692960677294501}
   - component: {fileID: 8306418878902264921}
   - component: {fileID: -8589998156934007651}
+  - component: {fileID: 3669321525183652623}
   m_Layer: 6
   m_Name: ObjWheat
   m_TagString: Untagged
@@ -118,3 +119,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c108dce8ab87a49becc33e6bf05a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rbObj: {fileID: 3669321525183652623}
+  positionToHold: {x: 0, y: 3, z: 0}
+  forwardThrowForce: 10
+  upwardThrowForce: 5
+--- !u!54 &3669321525183652623
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713477968716573866}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
