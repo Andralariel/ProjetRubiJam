@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 383712602301008800}
   - component: {fileID: 1388286688267538739}
+  - component: {fileID: 51537514385553539}
   m_Layer: 0
   m_Name: Game Moinager
   m_TagString: Untagged
@@ -47,8 +48,22 @@ MonoBehaviour:
   jaugeMoney: 50
   jaugePeopleLove: 50
   jaugeGodFaith: 50
-  timeBeforeDecrease: 5
-  currentDurationBeforeDecrease: 0
+  jaugeDecreaseInterval: 5
+  currentTimeBeforeDecrease: 0
   valueDecreaseMoney: 1
   valueDecreaseLove: 1
   valueDecreaseFaith: 1
+--- !u!114 &51537514385553539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683221256232982624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d94f02dad5edc43896cd045c3a380a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propsWheat: {fileID: 4713477968716573866, guid: ffb9e10aeb9ac114d9cc4b346a275e57,
+    type: 3}

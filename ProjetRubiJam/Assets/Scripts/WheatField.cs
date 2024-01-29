@@ -11,6 +11,7 @@ public class WheatField : MonoBehaviour
     [SerializeField] private float wheatGrowthSpeed = 10f;
     [SerializeField] private float wheatGrowthInterval = 1f;
     [SerializeField] private float wheatcurrentTimeGrowth = 0f;
+    [SerializeField] private List<GameObject> statesWheat = new(5);
 
     [Header("Harvest")] 
     public bool canWheatHarvest = false;
@@ -21,6 +22,7 @@ public class WheatField : MonoBehaviour
     [Header("Wheat")] 
     [SerializeField] private List<GameObject> listsPropsWheat;
     [SerializeField] private Transform wheatSpawnPoint;
+    [SerializeField] private Vector3 wheatSpawnOffset = new (0, 1, 0);
     
     
     void Start()
@@ -64,6 +66,11 @@ public class WheatField : MonoBehaviour
             }
         }
     }
+
+    void ChangeWheatState()
+    {
+        
+    }
     
     
     public void HarvestWheat()
@@ -74,11 +81,17 @@ public class WheatField : MonoBehaviour
             {
                 Debug.Log("wheat harvested");
                 wheatHarvestCurrentTime -= wheatHarvestInterval;
+                wheatGrowth -= wheatGrowth;
                 
                 canWheatGrow = true;
                 canWheatHarvest = false;
 
-                wheatGrowth -= wheatGrowth;
+                var wheatClone = Instantiate(AlcoholProduction.instance.propsWheat, wheatSpawnPoint.position, Quaternion.identity, gameObject.transform);
+                listsPropsWheat.Add(wheatClone);
+                
+                Vector3 newOffset = listsPropsWheat[listsPropsWheat.Count-1].transform.position;
+                newOffset += wheatSpawnOffset;
+                wheatSpawnPoint.position = newOffset;
             }
             else
             {
