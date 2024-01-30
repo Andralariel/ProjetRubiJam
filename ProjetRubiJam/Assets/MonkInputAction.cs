@@ -44,6 +44,15 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""d4bc5280-12de-4d48-8287-9b3067c256ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,28 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8646b1b-d6f7-4ccd-b5c1-7943c8a8ab15"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d2abbb9-20e5-4897-bad2-ff33ed97668a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -90,6 +121,7 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
         m_MonkInputs = asset.FindActionMap("MonkInputs", throwIfNotFound: true);
         m_MonkInputs_Move = m_MonkInputs.FindAction("Move", throwIfNotFound: true);
         m_MonkInputs_Interact = m_MonkInputs.FindAction("Interact", throwIfNotFound: true);
+        m_MonkInputs_Dash = m_MonkInputs.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -153,12 +185,14 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
     private List<IMonkInputsActions> m_MonkInputsActionsCallbackInterfaces = new List<IMonkInputsActions>();
     private readonly InputAction m_MonkInputs_Move;
     private readonly InputAction m_MonkInputs_Interact;
+    private readonly InputAction m_MonkInputs_Dash;
     public struct MonkInputsActions
     {
         private @MonkInputAction m_Wrapper;
         public MonkInputsActions(@MonkInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MonkInputs_Move;
         public InputAction @Interact => m_Wrapper.m_MonkInputs_Interact;
+        public InputAction @Dash => m_Wrapper.m_MonkInputs_Dash;
         public InputActionMap Get() { return m_Wrapper.m_MonkInputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -174,6 +208,9 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IMonkInputsActions instance)
@@ -184,6 +221,9 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IMonkInputsActions instance)
@@ -214,5 +254,6 @@ public partial class @MonkInputAction: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }
