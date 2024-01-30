@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheatField : MonoBehaviour
+public class WheatField : InteractableObj
 {
     [SerializeField] public float wheatGrowth = 100;
 
@@ -23,6 +23,8 @@ public class WheatField : MonoBehaviour
     [SerializeField] private List<GameObject> listsPropsWheat;
     [SerializeField] private Transform wheatSpawnPoint;
     [SerializeField] private Vector3 wheatSpawnOffset = new (0, 1, 0);
+
+    private bool _playerIsInteracting;
     
     
     void Start()
@@ -35,12 +37,20 @@ public class WheatField : MonoBehaviour
     void Update()
     {
         GrowWheat();
-        
-        //DEBUG
-        if (Input.GetKey(KeyCode.Space))
-        {
-            HarvestWheat();
-        }
+        if (!_playerIsInteracting) return;
+        HarvestWheat();
+    }
+
+    public override void PressAction(PlayerController player)
+    {
+        Debug.Log("Action from wheat");
+        _playerInteracting = player;
+        _playerIsInteracting = true;
+    }
+
+    public override void ReleaseAction()
+    {
+        _playerIsInteracting = false;
     }
 
     void GrowWheat()

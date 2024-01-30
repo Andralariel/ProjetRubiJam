@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3336072775732592421}
   - component: {fileID: 8475208910439979837}
   - component: {fileID: 8567712063789364244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheat Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1320839809770063941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheat Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6870702316837055374}
   - component: {fileID: 6861750947914431903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheat Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,11 +187,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86903e4f006994342bfa913efabb8ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rbObj: {fileID: 0}
+  positionToHold: {x: 0, y: 0, z: 0}
+  forwardThrowForce: 10
+  upwardThrowForce: 5
+  type: 0
   wheatGrowth: 100
   canWheatGrow: 1
   wheatGrowthSpeed: 10
   wheatGrowthInterval: 1
-  wheatcurrentTimeGrowth: 0
+  wheatCurrentTimeGrowth: 0
   statesWheat:
   - {fileID: 5688699221240558646}
   - {fileID: 3166202576473135273}
@@ -201,7 +206,7 @@ MonoBehaviour:
   canWheatHarvest: 0
   wheatHarvestSpeed: 1
   wheatHarvestCurrentTime: 0
-  wheatHarvestInterval: 4
+  wheatHarvestDuration: 4
   listsPropsWheat: []
   wheatSpawnPoint: {fileID: 1320839809770063941}
   wheatSpawnOffset: {x: 0, y: 1.01, z: 0}
@@ -217,6 +222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 4b310d4f6d8ce0e43a8ab4dcb1621eb3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5386682386780274044, guid: 4b310d4f6d8ce0e43a8ab4dcb1621eb3,
         type: 3}
@@ -307,6 +317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: fb8e382096b065440a30bdc981eb6cdb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5386682386780274044, guid: fb8e382096b065440a30bdc981eb6cdb,
         type: 3}
@@ -455,6 +470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713477968716573866, guid: ffb9e10aeb9ac114d9cc4b346a275e57,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713477968716573866, guid: ffb9e10aeb9ac114d9cc4b346a275e57,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -487,6 +507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 396d7da3b6013284099f75e27c9e8d76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5386682386780274044, guid: 396d7da3b6013284099f75e27c9e8d76,
         type: 3}
@@ -577,6 +602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat State 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386682386780274044, guid: 20f57853b02e23746a62e0167025eff9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5386682386780274044, guid: 20f57853b02e23746a62e0167025eff9,
         type: 3}

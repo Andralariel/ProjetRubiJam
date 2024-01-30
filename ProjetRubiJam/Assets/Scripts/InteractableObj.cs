@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class InteractableObj : MonoBehaviour
 {
-    private PlayerController _playerInteracting;
-    private Transform _objTransform;
+    internal PlayerController _playerInteracting;
+    internal Transform _objTransform;
     
     [SerializeField] private Rigidbody rbObj;
     [SerializeField] private Vector3 positionToHold;
