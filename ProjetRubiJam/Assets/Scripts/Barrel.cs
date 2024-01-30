@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
+    [Header("Common")]
+    public bool isEmpty = true;
+    [SerializeField] private List<GameObject> barrelStates = new(3);
+    [SerializeField] private MeshRenderer barrelDebug;
+    
     [Header("Brewing")]
     public bool isBarrelPlaced;
-    [SerializeField] private bool doesContainWheat;
+    public bool doesContainWheat;
     [SerializeField] private bool canBrew;
     [SerializeField] private float brewingDuration = 10f;
     [SerializeField] private float brewingSpeed = 1f;
@@ -14,12 +19,15 @@ public class Barrel : MonoBehaviour
 
     [Header("Alcohol")] 
     public bool isAlcohol = false;
-    public bool isEmpty = false;
+    
     
     
     void Start()
     {
         canBrew = true;
+        isEmpty = true;
+        ChangeBarrelStates();
+        barrelDebug.enabled = false;
     }
 
 
@@ -45,6 +53,7 @@ public class Barrel : MonoBehaviour
                     brewingCurrentTime = 0;
 
                     isAlcohol = true;
+                    ChangeBarrelStates();
                 }
                 else
                 {
@@ -53,5 +62,28 @@ public class Barrel : MonoBehaviour
             }
         }
     }
-    
+
+    public void ChangeBarrelStates()
+    {
+        foreach (var state in barrelStates)
+        {
+            state.SetActive(false);
+        }
+        
+        if (isEmpty)
+        {
+            //Debug.Log("vide");
+            barrelStates[0].SetActive(true);
+        }
+        else if (doesContainWheat)
+        {
+            //Debug.Log("blé");
+            barrelStates[1].SetActive(true);
+        }
+        else if (isAlcohol)
+        {
+            //Debug.Log("glou");
+            barrelStates[2].SetActive(true);
+        }
+    }
 }
