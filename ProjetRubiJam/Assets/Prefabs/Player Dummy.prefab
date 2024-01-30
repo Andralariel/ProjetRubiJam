@@ -131,10 +131,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rbMonk: {fileID: 7002942487584936916}
+  stickDeadZone: 0.125
   accel: 2
   maxSpeed: 5.5
   dashAccel: 50
-  dashCooldown: 20
+  staticDashMultiplier: 2
+  dashMaxSpeed: 60
+  dashCooldown: 0.35
 --- !u!54 &7002942487584936916
 Rigidbody:
   m_ObjectHideFlags: 0

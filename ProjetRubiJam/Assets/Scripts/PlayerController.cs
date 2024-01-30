@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private float _dashTimer;
     private InteractableObj _currentObj;
     private bool _interacting;
-    private bool _dashing;
+    private bool _dashing, _dashOnCooldown;
     private Vector3 _currentDirection;
     
     [SerializeField] private LayerMask layerMask;
@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accel = 100;
     [SerializeField] private float maxSpeed = 8;
     [SerializeField] private float dashAccel = 20;
+    [SerializeField] private float staticDashMultiplier = 2;
+    [SerializeField] private float dashMaxSpeed = 20;
     [SerializeField] private float dashCooldown = 20;
     
     public void Move(InputAction.CallbackContext ctx)
@@ -35,8 +37,14 @@ public class PlayerController : MonoBehaviour
     public void Dash(InputAction.CallbackContext ctx)
     {
         if (!ctx.performed) return;
+
+        if (_dashOnCooldown) return;
+        _dashOnCooldown = true;
         _dashing = true;
-        rbMonk.AddForce(transform.forward*dashAccel,ForceMode.Impulse);
+        _dashTimer = 0;
+        
+        if(_currentDirection!=Vector3.zero) rbMonk.AddForce(transform.forward*dashAccel,ForceMode.Impulse);
+        else rbMonk.AddForce(transform.forward*dashAccel*staticDashMultiplier,ForceMode.VelocityChange);
     }
 
     private void Press()
@@ -66,8 +74,19 @@ public class PlayerController : MonoBehaviour
             rbMonk.AddForce(_currentDirection*accel,ForceMode.Impulse);
             if (rbMonk.velocity.magnitude > maxSpeed) rbMonk.velocity = rbMonk.velocity.normalized * maxSpeed;
         }
-        else if (rbMonk.velocity.magnitude < maxSpeed) _dashing = false;
+        else
+        {
+            if (rbMonk.velocity.magnitude > dashMaxSpeed) rbMonk.velocity = rbMonk.velocity.normalized * dashMaxSpeed;
+            
+            if (rbMonk.velocity.magnitude < maxSpeed) _dashing = false;
+        }
         
         if(_currentDirection!=Vector3.zero) transform.rotation = Quaternion.LookRotation(_currentDirection);
+
+        if (_dashOnCooldown)
+        {
+            _dashTimer += Time.deltaTime;
+            if (_dashTimer >= dashCooldown) _dashOnCooldown = false;
+        }
     }
 }
