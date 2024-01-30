@@ -7,7 +7,6 @@ public class Cart : MonoBehaviour
     [Header("Loading")]
     public List<GameObject> barrelsOnCart = new(6);
     [SerializeField] private List<GameObject> posBarrel = new(6);
-    [SerializeField] private int sizeCart = 6;
     public bool isWaiting;
 
     [Header("Departure")] 
@@ -17,7 +16,6 @@ public class Cart : MonoBehaviour
 
     [Header("Return")] 
     [SerializeField] private Bell bellScript;
-    [SerializeField] private float timerRespawn = 0.125f;
     
     void Start()
     {
