@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonkManager : MonoBehaviour
 {
@@ -10,23 +8,28 @@ public class MonkManager : MonoBehaviour
     [Header("Common")]
     [SerializeField] private float jaugeDecreaseInterval = 5f;
     [SerializeField] private float currentTimeBeforeDecrease = 0f;
-    
+
     [Header("Argent")]
-    [SerializeField] private float jaugeMoney = 50f;
+    [SerializeField] private Image gaugeMoney;
+    [SerializeField] private float maxMoney = 50f;
     [SerializeField] private float valueDecreaseMoney = 1f;
     public int priceBarrel = 20;
     
     [Header("Amour du peuple")]
-    [SerializeField] private float jaugePeopleLove = 50f;
+    [SerializeField] private Image gaugeLove;
+    [SerializeField] private float maxLove = 50f;
     [SerializeField] private float valueDecreaseLove= 1f;
     
     [Header("Foi envers Dieu")]
-    [SerializeField] private float jaugeGodFaith = 50f;
+    [SerializeField] private Image gaugeFaith;
+    [SerializeField] private float maxFaith = 50f;
     [SerializeField] private float valueDecreaseFaith = 1f;
-    
-    
-    
 
+    private float _currentMoney;
+    private float _currentLove;
+    private float _currentFaith;
+    
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -36,55 +39,52 @@ public class MonkManager : MonoBehaviour
         else
         {
             instance = this;
+
+            _currentMoney = maxMoney;
+            _currentLove = maxLove;
+            _currentFaith = maxFaith;
+            UpdateGauge();
         }
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    
+    private void Update()
     {
         JaugeManager();
+        UpdateGauge();
     }
-
-
-    void JaugeManager()
+    
+    private void JaugeManager()
     {
         if (currentTimeBeforeDecrease >= jaugeDecreaseInterval)
         {
-            //Debug.Log("diminution des jauges");
             currentTimeBeforeDecrease -= jaugeDecreaseInterval;
 
-            jaugeMoney -= valueDecreaseMoney;
-            jaugePeopleLove -= valueDecreaseLove;
-            jaugeGodFaith -= valueDecreaseFaith;
+            _currentMoney -= valueDecreaseMoney;
+            _currentLove -= valueDecreaseLove;
+            _currentFaith -= valueDecreaseFaith;
             CheckJauges();
         }
         else
         {
-            currentTimeBeforeDecrease += Time.deltaTime; 
+            currentTimeBeforeDecrease += Time.deltaTime;
         }
     }
     
-    void CheckJauges()
+    private void CheckJauges()
     {
-        if (jaugeMoney <= 0)
+        if (_currentMoney <= 0)
         {
             
         }
-        else if (jaugePeopleLove <= 0)
+        
+        if (_currentLove <= 0)
         {
             
         }
-        else if (jaugeGodFaith <= 0)
+        
+        if (_currentFaith <= 0)
         {
             
-        }
-        else
-        {
-            //Debug.Log("Tout va relativement bien.");
         }
     }
 
@@ -97,8 +97,14 @@ public class MonkManager : MonoBehaviour
 
     public void AddMoney(int money)
     {
-        jaugeMoney += money;
+        _currentMoney += money;
+        if (_currentMoney >= maxMoney) _currentMoney = maxMoney;
     }
-    
-    
+
+    private void UpdateGauge()
+    {
+        gaugeMoney.fillAmount = _currentMoney/maxMoney;
+        gaugeLove.fillAmount = _currentLove/maxLove;
+        gaugeFaith.fillAmount = _currentFaith/maxFaith;
+    }
 }
