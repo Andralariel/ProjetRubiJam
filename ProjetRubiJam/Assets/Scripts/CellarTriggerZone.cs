@@ -23,14 +23,4 @@ public class CellarTriggerZone : MonoBehaviour
         barrelScript.isBarrelPlaced = false;
         barrelScript = null;
     }
-    
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
-    }
 }

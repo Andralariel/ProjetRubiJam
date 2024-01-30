@@ -10,6 +10,7 @@ public class InteractableObj : MonoBehaviour
     [SerializeField] private Vector3 positionToHold;
     [SerializeField] private float forwardThrowForce = 10;
     [SerializeField] private float upwardThrowForce = 5;
+    public Objets type = Objets.None;
 
     private void Awake()
     {
@@ -48,4 +49,14 @@ public class InteractableObj : MonoBehaviour
         _objTransform.parent = null;
         rbObj.AddForce(_objTransform.forward*forwardThrowForce + _objTransform.up*upwardThrowForce,ForceMode.Impulse);
     }
+}
+
+public enum Objets
+{
+    None,
+    Wheat,
+    Barrel,
+    Coffin,
+    Bones,
+    Player,
 }
