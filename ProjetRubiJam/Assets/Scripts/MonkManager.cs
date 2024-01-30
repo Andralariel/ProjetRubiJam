@@ -7,16 +7,24 @@ public class MonkManager : MonoBehaviour
 {
     public static MonkManager instance;
     
-    [Header("Variables")]
-    [SerializeField] public float jaugeMoney = 50f;
-    [SerializeField] public float jaugePeopleLove = 50f;
-    [SerializeField] public float jaugeGodFaith = 50f;
-
+    [Header("Common")]
     [SerializeField] private float jaugeDecreaseInterval = 5f;
     [SerializeField] private float currentTimeBeforeDecrease = 0f;
+    
+    [Header("Argent")]
+    [SerializeField] private float jaugeMoney = 50f;
     [SerializeField] private float valueDecreaseMoney = 1f;
+    public int priceBarrel = 20;
+    
+    [Header("Amour du peuple")]
+    [SerializeField] private float jaugePeopleLove = 50f;
     [SerializeField] private float valueDecreaseLove= 1f;
+    
+    [Header("Foi envers Dieu")]
+    [SerializeField] private float jaugeGodFaith = 50f;
     [SerializeField] private float valueDecreaseFaith = 1f;
+    
+    
     
 
     private void Awake()
@@ -86,5 +94,11 @@ public class MonkManager : MonoBehaviour
         Time.timeScale = 0;
         //afficher menu score
     }
+
+    public void AddMoney(int money)
+    {
+        jaugeMoney += money;
+    }
+    
     
 }

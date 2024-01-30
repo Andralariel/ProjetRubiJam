@@ -12,7 +12,7 @@ public class Barrel : MonoBehaviour
     [Header("Brewing")]
     public bool isBarrelPlaced;
     public bool doesContainWheat;
-    [SerializeField] private bool canBrew;
+    public bool canBrew;
     [SerializeField] private float brewingDuration = 10f;
     [SerializeField] private float brewingSpeed = 1f;
     [SerializeField] private float brewingCurrentTime = 0f;

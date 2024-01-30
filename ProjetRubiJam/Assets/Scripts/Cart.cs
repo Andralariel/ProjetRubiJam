@@ -11,18 +11,28 @@ public class Cart : MonoBehaviour
     public bool isWaiting;
 
     [Header("Departure")] 
-    [SerializeField] private float travelDuration;
+    [SerializeField] private float travelDuration = 5f;
     [SerializeField] private float currentTravelTime;
-    [SerializeField] private float travelSpeed;
+    [SerializeField] private float travelSpeed = 1f;
+
+    [Header("Return")] 
+    [SerializeField] private Bell bellScript;
+    [SerializeField] private float timerRespawn = 0.125f;
     
     void Start()
     {
         barrelsOnCart.Clear();
         barrelsOnCart = new(0);
+
+        isWaiting = true;
     }
     
     void Update()
     {
+        if (!isWaiting)
+        {
+            CartTravel();
+        }
         
     }
 
@@ -35,12 +45,69 @@ public class Cart : MonoBehaviour
 
     public void CartDeparture()
     {
+        if (isWaiting)
+        {
+            if (barrelsOnCart.Count > 0)
+            {
+                MonkManager.instance.AddMoney(barrelsOnCart.Count * MonkManager.instance.priceBarrel);
+                //move Cart forward
+                isWaiting = false;
+                Debug.Log("Cart gone");
+            }
+            else
+            {
+                Debug.Log("no barrel on cart");
+            }
+        }
+    }
+
+    void CartTravel()
+    {
+        if (currentTravelTime >= travelDuration)
+        {
+            Debug.Log("Cart revient");
+            currentTravelTime = 0;
+            isWaiting = true;
+            CartReturn();
+        }
+        else
+        {
+            currentTravelTime += travelSpeed * Time.deltaTime;
+        }
+    }
+
+    void CartReturn()
+    {
+        //move Cart backward
         
-        
-        
+        for (int i = 0; i < barrelsOnCart.Count; i++)
+        {
+            var barrelScript = barrelsOnCart[i].GetComponent<Barrel>();
+            barrelScript.canBrew = true;
+            barrelScript.isEmpty = true;
+            barrelScript.isAlcohol = false;
+            barrelScript.ChangeBarrelStates();
+            barrelsOnCart[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            barrelsOnCart[i].GetComponent<CapsuleCollider>().enabled = true;
+            barrelsOnCart[i].transform.parent = null;
+            barrelsOnCart[i].transform.position = bellScript.barrelReturnPoints[i].position;
+            
+            //StartCoroutine(RespawnCoroutine(i, duration));
+        }
         barrelsOnCart.Clear();
         barrelsOnCart = new(0);
     }
+
+    private IEnumerator RespawnCoroutine(int size, float duration)
+    {
+        yield return new WaitForSecondsRealtime(duration);
+        for (int i = 0; i < size; i++)
+        {
+            
+        }
+        
+    }
+    
     
     
 }

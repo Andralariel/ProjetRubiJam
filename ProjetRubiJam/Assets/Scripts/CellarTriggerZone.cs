@@ -22,6 +22,7 @@ public class CellarTriggerZone : MonoBehaviour
     
     private void OnTriggerExit(Collider barrel)
     {
+        if (barrel.gameObject.layer != 6) return;
         //Debug.Log("exit barrel");
         barrelScript.isBarrelPlaced = false;
         barrelScript = null;

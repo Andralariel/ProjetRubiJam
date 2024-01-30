@@ -18,10 +18,4 @@ public class CartTriggerZone : MonoBehaviour
             cartScript.AddBarrelToCart(other.gameObject);
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer != 6) return;
-        other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-    }
 }

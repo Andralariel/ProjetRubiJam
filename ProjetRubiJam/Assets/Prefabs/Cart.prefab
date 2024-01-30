@@ -250,6 +250,11 @@ MonoBehaviour:
   - {fileID: 6092902265469894092}
   - {fileID: 7075694219178120432}
   sizeCart: 4
+  isWaiting: 0
+  travelDuration: 5
+  currentTravelTime: 0
+  travelSpeed: 1
+  bellScript: {fileID: 0}
 --- !u!136 &2711655567379177950
 CapsuleCollider:
   m_ObjectHideFlags: 0

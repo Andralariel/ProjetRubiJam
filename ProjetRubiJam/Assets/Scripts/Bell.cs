@@ -5,29 +5,18 @@ using UnityEngine;
 public class Bell : InteractableObj
 {
     [SerializeField] private Cart cartScript;
+
+    public List<Transform> barrelReturnPoints = new(4);
     
     public override void PressAction(PlayerController player)
     {
         Debug.Log("Action from bell");
         _playerInteracting = player;
-        CallBell();
-    }
-    
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
+        cartScript.CartDeparture();
     }
 
-    void CallBell()
+    public override void ReleaseAction()
     {
-        if (cartScript.isWaiting)
-        {
-            //if (cartScript.)
-        }
+       
     }
 }
