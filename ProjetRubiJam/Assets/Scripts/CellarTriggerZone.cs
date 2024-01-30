@@ -6,26 +6,38 @@ using UnityEngine;
 public class CellarTriggerZone : MonoBehaviour
 {
     [SerializeField] private Barrel barrelScript;
+    [SerializeField] private Vector3 posOffset;
+    [SerializeField] private Vector3 rotationOffset;
+    [SerializeField] private GameObject currentBarrel;
     
-    private void OnTriggerEnter(Collider barrel)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (barrel.gameObject.layer != 6) return;
-        if (barrel.gameObject.GetComponent<Barrel>())
+        if (other.gameObject.layer != 6) return;
+        if (other.gameObject.GetComponent<Barrel>())
         {
+            if (currentBarrel != null) return;
+            barrelScript = other.gameObject.GetComponent<Barrel>();
+            currentBarrel = other.gameObject;
             //Debug.Log("enter barrel");
-            barrelScript = barrel.gameObject.GetComponent<Barrel>();
             barrelScript.isBarrelPlaced = true;
-            //DO MOVE 
-            barrel.GetComponent<Rigidbody>().isKinematic = true;
+            
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            var otherTransform = other.transform;
+            otherTransform.position = transform.position + posOffset;
+            otherTransform.rotation = new Quaternion(rotationOffset.x,rotationOffset.y,rotationOffset.z,0) ;
+
         }
     }
     
-    private void OnTriggerExit(Collider barrel)
+    
+    private void OnTriggerExit(Collider other)
     {
-        if (barrel.gameObject.layer != 6) return;
-        //Debug.Log("exit barrel");
+        if (other.gameObject.layer != 6) return;
+        if (other.gameObject != currentBarrel) return;
+        Debug.Log("exit barrel");
         barrelScript.isBarrelPlaced = false;
         barrelScript = null;
-        barrel.GetComponent<Rigidbody>().isKinematic = false;
+        currentBarrel = null;
     }
 }
