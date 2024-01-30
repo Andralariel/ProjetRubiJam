@@ -9,6 +9,7 @@ public class CellarTriggerZone : MonoBehaviour
     
     private void OnTriggerEnter(Collider barrel)
     {
+        if (barrel.gameObject.layer != 6) return;
         if (barrel.gameObject.GetComponent<Barrel>())
         {
             //Debug.Log("enter barrel");

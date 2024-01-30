@@ -9,9 +9,10 @@ public class BarrelTriggerZone : MonoBehaviour
     [SerializeField] private Transform barrelParent;
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer != 6) return;
         if (other.gameObject.GetComponent<InteractableObj>().type == Objets.Wheat)
         {
-            Debug.Log("wheat in barrel");
+            //Debug.Log("wheat in barrel");
             Destroy(other.gameObject);
             barrelScript.doesContainWheat = true;
             barrelScript.isEmpty = false;

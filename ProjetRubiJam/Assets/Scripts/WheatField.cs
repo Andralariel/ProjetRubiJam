@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WheatField : InteractableObj
 {
-    [SerializeField] public float wheatGrowth = 100;
-
     [Header("Growth")] 
+    [SerializeField] public float wheatGrowth = 100;
     public bool canWheatGrow = true;
     [SerializeField] private float wheatGrowthSpeed = 10f;
     [SerializeField] private float wheatGrowthInterval = 1f;

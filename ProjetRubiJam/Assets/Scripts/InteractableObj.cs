@@ -56,6 +56,7 @@ public enum Objets
     None,
     Wheat,
     Barrel,
+    Bell,
     Coffin,
     Bones,
     Player,
