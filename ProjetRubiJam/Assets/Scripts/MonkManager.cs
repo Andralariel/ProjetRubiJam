@@ -46,7 +46,7 @@ public class MonkManager : MonoBehaviour
     {
         if (currentTimeBeforeDecrease >= jaugeDecreaseInterval)
         {
-            Debug.Log("diminution des jauges");
+            //Debug.Log("diminution des jauges");
             currentTimeBeforeDecrease -= jaugeDecreaseInterval;
 
             jaugeMoney -= valueDecreaseMoney;
@@ -76,7 +76,7 @@ public class MonkManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Tout va relativement bien.");
+            //Debug.Log("Tout va relativement bien.");
         }
     }
 
