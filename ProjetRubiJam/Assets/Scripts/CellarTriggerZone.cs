@@ -14,6 +14,8 @@ public class CellarTriggerZone : MonoBehaviour
             //Debug.Log("enter barrel");
             barrelScript = barrel.gameObject.GetComponent<Barrel>();
             barrelScript.isBarrelPlaced = true;
+            //DO MOVE 
+            barrel.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
     
@@ -22,5 +24,6 @@ public class CellarTriggerZone : MonoBehaviour
         //Debug.Log("exit barrel");
         barrelScript.isBarrelPlaced = false;
         barrelScript = null;
+        barrel.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
