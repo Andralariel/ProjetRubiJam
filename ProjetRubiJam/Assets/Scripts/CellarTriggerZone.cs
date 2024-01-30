@@ -11,7 +11,7 @@ public class CellarTriggerZone : MonoBehaviour
     {
         if (barrel.gameObject.GetComponent<Barrel>())
         {
-            Debug.Log("enter barrel");
+            //Debug.Log("enter barrel");
             barrelScript = barrel.gameObject.GetComponent<Barrel>();
             barrelScript.isBarrelPlaced = true;
         }
@@ -19,7 +19,7 @@ public class CellarTriggerZone : MonoBehaviour
     
     private void OnTriggerExit(Collider barrel)
     {
-        Debug.Log("exit barrel");
+        //Debug.Log("exit barrel");
         barrelScript.isBarrelPlaced = false;
         barrelScript = null;
     }
