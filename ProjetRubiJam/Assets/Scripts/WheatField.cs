@@ -17,7 +17,7 @@ public class WheatField : MonoBehaviour
     public bool canWheatHarvest = false;
     [SerializeField] private float wheatHarvestSpeed = 1f;
     [SerializeField] private float wheatHarvestCurrentTime = 0f;
-    [SerializeField] private float wheatHarvestInterval = 4f;
+    [SerializeField] private float wheatHarvestDuration = 4f;
     
     [Header("Wheat")] 
     [SerializeField] private List<GameObject> listsPropsWheat;
@@ -100,11 +100,11 @@ public class WheatField : MonoBehaviour
     {
         if (canWheatHarvest)
         {
-            if (wheatHarvestCurrentTime >= wheatHarvestInterval)
+            if (wheatHarvestCurrentTime >= wheatHarvestDuration)
             {
                 Debug.Log("wheat harvested");
-                wheatHarvestCurrentTime -= wheatHarvestInterval;
-                wheatGrowth -= wheatGrowth;
+                wheatHarvestCurrentTime -= wheatHarvestDuration;
+                wheatGrowth = 0;
                 ChangeWheatState();
                 statesWheat[4].SetActive(false);
                 
