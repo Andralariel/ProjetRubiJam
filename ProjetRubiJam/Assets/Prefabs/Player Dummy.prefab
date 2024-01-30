@@ -94,6 +94,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d33334a0-ff9b-4ab6-871c-820c4b73f74b
     m_ActionName: MonkInputs/Interact[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6984552368797725241}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d4bc5280-12de-4d48-8287-9b3067c256ca
+    m_ActionName: MonkInputs/Dash[/XInputControllerWindows1/buttonEast,/XInputControllerWindows1/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MonkInputs
@@ -117,6 +133,8 @@ MonoBehaviour:
   rbMonk: {fileID: 7002942487584936916}
   accel: 2
   maxSpeed: 5.5
+  dashAccel: 50
+  dashCooldown: 20
 --- !u!54 &7002942487584936916
 Rigidbody:
   m_ObjectHideFlags: 0
