@@ -2,14 +2,20 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Event = Events.Event;
 
 public class MonkManager : MonoBehaviour
 {
     public static MonkManager instance;
+    [HideInInspector] public bool gameStopped;
 
     [Header("Common")]
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject creditMenu;
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject restartButton;
     [SerializeField] private TextMeshProUGUI textEvents;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private int gameDurationInSeconds = 300;
@@ -62,8 +68,6 @@ public class MonkManager : MonoBehaviour
     private bool _playingAnEvent;
     
     private float _generalTimer;
-
-    private bool _gameStopped;
     
     private void Awake()
     {
@@ -84,12 +88,18 @@ public class MonkManager : MonoBehaviour
             _eventTimer = -minDurationBetweenEvents;
             _generalTimer = gameDurationInSeconds;
             UpdateTimerText();
+
+            mainMenu.SetActive(true);
+            gameUI.SetActive(false);
+            creditMenu.SetActive(false);
+            restartButton.SetActive(false);
+            gameStopped = true;
         }
     }
     
     private void Update()
     {
-        if (_gameStopped) return;
+        if (gameStopped) return;
         GeneralTimerUpdate();
         EventTimer();
         JaugeManager();
@@ -173,13 +183,10 @@ public class MonkManager : MonoBehaviour
 
     void EndGame()
     {
-        _gameStopped = true;
+        gameStopped = true;
         textEvents.text = "Game over";
         DOTween.KillAll();
-        Debug.Log("Tween is created");
-        DOTween.defaultTimeScaleIndependent = true;
-        Time.timeScale = 0;
-        textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f));
+        textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f).OnComplete(() => restartButton.SetActive(true)));
     }
 
     private void StartEvent()
@@ -260,8 +267,40 @@ public class MonkManager : MonoBehaviour
     public void AddPlayerToList(PlayerController player)
     {
         playerList.Add(player);
+        if (pointForChickens.Count == 0) return;
+        
         pointForChickens[0].transform.SetParent(player.transform,false);
         //pointForChickens[0].transform.localPosition = Vector3.zero;
         pointForChickens.RemoveAt(0);
+    }
+    
+    //Method for UI Button
+    public void StartGame()
+    {
+        gameStopped = false;
+        mainMenu.SetActive(false);
+        gameUI.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        creditMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ReturnToMenu()
+    {
+        creditMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
