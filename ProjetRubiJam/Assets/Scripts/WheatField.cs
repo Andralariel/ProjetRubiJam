@@ -113,7 +113,8 @@ public class WheatField : InteractableObj
             if (wheatHarvestCurrentTime >= wheatHarvestDuration)
             {
                 Debug.Log("wheat harvested");
-                wheatHarvestCurrentTime -= wheatHarvestDuration;
+                imageToFill.enabled = false;
+                wheatHarvestCurrentTime = 0;
                 wheatGrowth = 0;
                 ChangeWheatState();
                 statesWheat[4].SetActive(false);
@@ -130,7 +131,9 @@ public class WheatField : InteractableObj
             }
             else
             {
+                if(wheatHarvestCurrentTime == 0) imageToFill.enabled = true;
                 wheatHarvestCurrentTime += Time.deltaTime * wheatHarvestSpeed;
+                imageToFill.fillAmount = wheatHarvestCurrentTime / wheatHarvestDuration;
             }
         }
     }
