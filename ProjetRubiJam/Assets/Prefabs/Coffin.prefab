@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbObj: {fileID: 6207486550853458546}
-  positionToHold: {x: 0, y: 0, z: 0}
+  positionToHold: {x: 0, y: 2, z: 0}
   forwardThrowForce: 10
   upwardThrowForce: 5
   type: 4
