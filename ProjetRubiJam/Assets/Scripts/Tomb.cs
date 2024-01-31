@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tomb : InteractableObj
 {
+    public Image imageToFill;
     public float holeProgress = 100f;
     
     [Header("Digging")]
@@ -35,10 +37,9 @@ public class Tomb : InteractableObj
     
     void Update()
     {
+        CoverHole();
         if (!_playerIsInteracting) return;
         DigHole();
-        CoverHole();
-        
     }
 
     public override void PressAction(PlayerController player)
@@ -63,7 +64,10 @@ public class Tomb : InteractableObj
                 {
                     Debug.Log("digging...");
                     diggingCurrentTime -= diggingInterval;
+                    
+                    if(holeProgress >= 100) imageToFill.enabled = true;
                     holeProgress -= diggingSpeed;
+                    imageToFill.fillAmount = (100-holeProgress) / 100;
                 }
                 else
                 {
@@ -72,6 +76,7 @@ public class Tomb : InteractableObj
             }
             else if (holeProgress <= 0)
             {
+                imageToFill.enabled = false;
                 Debug.Log("hole dug");
                 ChangeHoleState();
                 canDig = false;
@@ -92,7 +97,10 @@ public class Tomb : InteractableObj
                 {
                     Debug.Log("covering...");
                     coverCurrentTime -= coverInterval;
+                    
+                    if(holeProgress == 0) imageToFill.enabled = true;
                     holeProgress += coverSpeed;
+                    imageToFill.fillAmount = holeProgress / 100;
                 }
                 else
                 {
@@ -105,6 +113,7 @@ public class Tomb : InteractableObj
                 ChangeHoleState();
                 canCover = false;
                 canDig = true;
+                imageToFill.enabled = false;
 
                 hasCoffin = false;
                 Destroy(currentCoffin);
