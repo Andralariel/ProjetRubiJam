@@ -106,7 +106,7 @@ public class Pray : InteractableObj
                 {
                     Destroy(peon);
                 }
-                MonkManager.instance.AddFaith(MonkManager.instance.loveWhenPray * peonsList.Count);
+                MonkManager.instance.AddLove(MonkManager.instance.loveWhenPray * peonsList.Count);
                 peonsList.Clear();
                 imageToFill.enabled = true; 
                 ispraying = false;
