@@ -4353,7 +4353,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 6
+      m_SerializableObject: 3
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -5925,7 +5925,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Position, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":0.23000000417232514,"y":2.0,"z":0.8799999952316284}}'
+      m_SerializableObject: '{"position":{"x":0.0,"y":6.0,"z":0.0}}'
     m_Space: 0
   m_Property:
     name: Position
@@ -9820,7 +9820,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615145}
-  m_UIPosition: {x: 3319, y: -292}
+  m_UIPosition: {x: 3319, y: -330}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []

@@ -43,6 +43,9 @@ public class MonkManager : MonoBehaviour
     [SerializeField] private Event loveEvent;
     [SerializeField] private Event faithEvent;
     [SerializeField] private List<Event> otherEvents;
+    
+    public List<PlayerController> playerList;
+    public List<GameObject> pointForChickens;
 
     private float _currentMoney;
     private float _moneyBuffer;
@@ -252,5 +255,13 @@ public class MonkManager : MonoBehaviour
         if (_currentFaith > maxFaith) _currentFaith = maxFaith;
 
         _faithBuffer = tickBufferAfterIncrease;
+    }
+
+    public void AddPlayerToList(PlayerController player)
+    {
+        playerList.Add(player);
+        pointForChickens[0].transform.SetParent(player.transform,false);
+        //pointForChickens[0].transform.localPosition = Vector3.zero;
+        pointForChickens.RemoveAt(0);
     }
 }

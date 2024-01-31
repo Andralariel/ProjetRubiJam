@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,7 +20,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float staticDashMultiplier = 2;
     [SerializeField] private float dashMaxSpeed = 20;
     [SerializeField] private float dashCooldown = 20;
-    
+
+    private void Start()
+    {
+        MonkManager.instance.AddPlayerToList(this);
+    }
+
     public void Move(InputAction.CallbackContext ctx)
     {
          _currentDirection = ctx.ReadValue<Vector2>();
