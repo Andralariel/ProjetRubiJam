@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 695402433872037134}
   - component: {fileID: 4042993601022209968}
   - component: {fileID: 126730792267862666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
