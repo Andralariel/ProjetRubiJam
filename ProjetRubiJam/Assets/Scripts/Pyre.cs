@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pyre : MonoBehaviour
 {
     public int nbBonesBurned = 0;
-    
+    [SerializeField] private ParticleSystem fireBurst;
     private void Start()
     {
         nbBonesBurned = 0;
@@ -16,6 +16,7 @@ public class Pyre : MonoBehaviour
     {
         if (other.gameObject.layer != 6) return;
         if (other.gameObject.GetComponent<InteractableObj>().type != Objets.Bones) return;
+        fireBurst.Play();
         Debug.Log("Par le feu tu seras sanctifié");
         Destroy(other.gameObject);
         nbBonesBurned++;
