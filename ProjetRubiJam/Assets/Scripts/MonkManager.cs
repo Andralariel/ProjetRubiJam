@@ -57,6 +57,10 @@ public class MonkManager : MonoBehaviour
     
     public List<PlayerController> playerList;
     public List<GameObject> pointForChickens;
+    public Image imageForEvents;
+    public Sprite famineSprite; 
+    public Sprite insurrectionSprite; 
+    public Sprite terreurSprite;
 
     [Header("Random Wheat")] 
     [SerializeField] private List<WheatField> wheatFields;
@@ -76,6 +80,7 @@ public class MonkManager : MonoBehaviour
     private bool _playingAnEvent;
     
     private float _generalTimer;
+    private bool _firstEvent;
     
     private void Awake()
     {
@@ -136,6 +141,8 @@ public class MonkManager : MonoBehaviour
     
     private void EventTimer()
     {
+        if (!_firstEvent) return;
+        
         _eventTimer += Time.deltaTime;
         if (_playingAnEvent)
         {
@@ -204,7 +211,8 @@ public class MonkManager : MonoBehaviour
     private void StartEvent()
     {
         if (_playingAnEvent) return;
-        
+
+        _firstEvent = true;
         _playingAnEvent = true;
         _eventTimer = 0;
         _eventsToPlay.Clear();
@@ -220,13 +228,13 @@ public class MonkManager : MonoBehaviour
                 _currentEvent = otherEvents[Random.Range(0, otherEvents.Count)];
                 _currentEvent.StartEvent();
                 otherEvents.Remove(_currentEvent);
-                ShowTextEvent();
+                //ShowTextEvent();
             }
             else
             {
                 _currentEvent = _eventsToPlay[Random.Range(0, _eventsToPlay.Count)];
                 _currentEvent.StartEvent();
-                ShowTextEvent();
+                //ShowTextEvent();
             }
         }
         else
@@ -235,7 +243,7 @@ public class MonkManager : MonoBehaviour
             
             _currentEvent = _eventsToPlay[Random.Range(0, _eventsToPlay.Count)];
             _currentEvent.StartEvent();
-            ShowTextEvent();
+            //ShowTextEvent();
         }
     }
 
