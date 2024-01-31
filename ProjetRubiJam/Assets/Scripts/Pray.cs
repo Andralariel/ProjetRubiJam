@@ -16,6 +16,9 @@ public class Pray : InteractableObj
     [SerializeField] private float peonsInterval = 10f;
     [SerializeField] private float currentTimerPeons = 0f;
     
+    [SerializeField] private Vector2 offsetX = new(-2, 2);
+    [SerializeField] private Vector2 offsetZ = new(0, 2);
+    
     [Header("Prier")] 
     [SerializeField] private bool canPray;
     [SerializeField] private float prayDuration = 3f;
@@ -62,7 +65,11 @@ public class Pray : InteractableObj
                 currentTimerPeons = 0;
                 for (int i = 0; i < Random.Range(rangeNbPeons[0], rangeNbPeons[1]+1); i++)
                 {
-                    var peonClone = Instantiate(peonGb, peonSpawnPoint.position, Quaternion.identity, transform);
+                    Vector3 pos = peonSpawnPoint.position;
+                    pos.x += Random.Range(offsetX.x, offsetX.y);
+                    pos.z += Random.Range(offsetZ.x, offsetZ.y);
+                    
+                    var peonClone = Instantiate(peonGb, pos, Quaternion.identity, transform);
                     peonsList.Add(peonClone);
                     currentNbPeons = peonsList.Count;
                 }
