@@ -252,12 +252,14 @@ MonoBehaviour:
   maxPeons: 100
   rangeNbPeons: 0100000004000000
   peonsInterval: 10
+  peonsIntervalWhenTerror: 3
   currentTimerPeons: 0
   offsetX: {x: -2, y: 2}
   offsetZ: {x: 0, y: 2}
   canPray: 0
-  prayDuration: 3
+  prayDuration: 8
   currentTimerPray: 0
+  vfxpraying: {fileID: 1002260059518850187}
 --- !u!65 &8031337999519977915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -322,6 +324,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+        type: 3}
+      propertyPath: m_InitialEventName
+      value: no
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Praying Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4654488898331232067, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
         type: 3}
@@ -413,6 +440,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e, type: 3}
+--- !u!2083052967 &1002260059518850187 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 1291751800068079052, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2019168844822194503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6329324457266623678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5463922233744825849, guid: 3b80259ebe0ae8849ab7ecfbfc6c524e,
