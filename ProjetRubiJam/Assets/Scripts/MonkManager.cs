@@ -320,6 +320,8 @@ public class MonkManager : MonoBehaviour
     
     void RandomWheatSpawn()
     {
+        if (wheatFields[0] == null) return;
+        
         foreach (var field in wheatFields)
         {
             field.wheatGrowth = Random.Range(1, 4) * 20;
