@@ -347,7 +347,7 @@ MonoBehaviour:
   wheatGrowth: 100
   canWheatGrow: 1
   wheatGrowthSpeed: 10
-  wheatGrowthInterval: 1
+  wheatGrowthInterval: 2
   wheatCurrentTimeGrowth: 0
   imageToFill: {fileID: 2507893830831510109}
   statesWheat:

@@ -58,6 +58,9 @@ public class MonkManager : MonoBehaviour
     public List<PlayerController> playerList;
     public List<GameObject> pointForChickens;
 
+    [Header("Random Wheat")] 
+    [SerializeField] private List<WheatField> wheatFields;
+    
     private float _currentMoney;
     private float _moneyBuffer;
     
@@ -99,6 +102,8 @@ public class MonkManager : MonoBehaviour
             creditMenu.SetActive(false);
             restartButton.SetActive(false);
             gameStopped = true;
+
+            RandomWheatSpawn();
         }
     }
     
@@ -308,5 +313,15 @@ public class MonkManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+    void RandomWheatSpawn()
+    {
+        foreach (var field in wheatFields)
+        {
+            field.wheatGrowth = Random.Range(1, 4) * 20;
+            field.wheatCurrentTimeGrowth = Random.Range(0f,1.3f);
+        }
+        
     }
 }
