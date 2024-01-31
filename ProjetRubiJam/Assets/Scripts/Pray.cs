@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pray : InteractableObj
 {
+    [SerializeField] private Image imageToFill;
+    
     [Header("Les Péons")] 
     [SerializeField] private int currentNbPeons = 0;
     [SerializeField] private GameObject peonGb;
@@ -95,15 +98,17 @@ public class Pray : InteractableObj
                 }
                 MonkManager.instance.AddFaith(MonkManager.instance.loveWhenPray * peonsList.Count);
                 peonsList.Clear();
+                imageToFill.enabled = true;
             }
             else
             {
-                currentTimerPray += Time.deltaTime;
                 foreach (var peon in peonsList)
                 {
                     peon.transform.LookAt(transform);
-                    
                 }
+                if(currentTimerPray == 0) imageToFill.enabled = true;
+                currentTimerPray += Time.deltaTime;
+                imageToFill.fillAmount = currentTimerPray / prayDuration;
             }
         }
     }
