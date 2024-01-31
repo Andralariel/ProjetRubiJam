@@ -2109,7 +2109,11 @@ MonoBehaviour:
   terreur: 0
   playerList: []
   pointForChickens: []
-  wheatFields: []
+  wheatFields:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &51537514385553539
 MonoBehaviour:
   m_ObjectHideFlags: 0
