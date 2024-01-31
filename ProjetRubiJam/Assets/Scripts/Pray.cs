@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class Pray : InteractableObj
 {
@@ -26,7 +27,11 @@ public class Pray : InteractableObj
     [SerializeField] private bool canPray;
     [SerializeField] private float prayDuration = 3f;
     [SerializeField] private float currentTimerPray = 0f;
-    
+
+    [Header("VFX")] 
+    [SerializeField] private VisualEffect vfxpraying;
+
+    private bool ispraying;
     private bool _playerIsInteracting;
     
     void Start()
@@ -54,6 +59,8 @@ public class Pray : InteractableObj
     public override void ReleaseAction()
     {
         _playerIsInteracting = false;
+        ispraying = false;
+        vfxpraying.Reinit();
     }
     
     
@@ -98,10 +105,18 @@ public class Pray : InteractableObj
                 }
                 MonkManager.instance.AddFaith(MonkManager.instance.loveWhenPray * peonsList.Count);
                 peonsList.Clear();
-                imageToFill.enabled = true;
+                imageToFill.enabled = true; 
+                ispraying = false;
             }
             else
             {
+                if (!ispraying)
+                {
+                    vfxpraying.SetFloat("PrayingTime", prayDuration-currentTimerPray);
+                    vfxpraying.Play();
+                    ispraying = true;
+                    
+                }
                 foreach (var peon in peonsList)
                 {
                     peon.transform.LookAt(transform);
