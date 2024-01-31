@@ -1,10 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CellarTriggerZone : MonoBehaviour
 {
+    public Image imageToFill;
+    
     [SerializeField] private Barrel barrelScript;
     [SerializeField] private Vector3 posOffset;
     [SerializeField] private Vector3 rotationOffset;
@@ -18,7 +18,8 @@ public class CellarTriggerZone : MonoBehaviour
         {
             if (currentBarrel != null) return;
             barrelScript = other.gameObject.GetComponent<Barrel>();
-            currentBarrel = other.gameObject;
+            barrelScript.cellar = this;
+            currentBarrel = barrelScript.gameObject;
             //Debug.Log("enter barrel");
             barrelScript.isBarrelPlaced = true;
             

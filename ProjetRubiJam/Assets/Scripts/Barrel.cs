@@ -19,8 +19,8 @@ public class Barrel : MonoBehaviour
 
     [Header("Alcohol")] 
     public bool isAlcohol = false;
-    
-    
+
+    [HideInInspector] public CellarTriggerZone cellar;
     
     void Start()
     {
@@ -51,13 +51,16 @@ public class Barrel : MonoBehaviour
                     doesContainWheat = false;
                     canBrew = false;
                     brewingCurrentTime = 0;
+                    cellar.imageToFill.enabled = false;
 
                     isAlcohol = true;
                     ChangeBarrelStates();
                 }
                 else
                 {
+                    if(brewingCurrentTime == 0) cellar.imageToFill.enabled = true;
                     brewingCurrentTime += brewingSpeed * Time.deltaTime;
+                    cellar.imageToFill.fillAmount = brewingCurrentTime / brewingDuration;
                 }
             }
         }
