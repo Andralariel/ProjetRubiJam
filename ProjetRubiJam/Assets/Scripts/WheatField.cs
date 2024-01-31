@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WheatField : InteractableObj
 {
@@ -10,6 +10,7 @@ public class WheatField : InteractableObj
     [SerializeField] private float wheatGrowthSpeed = 10f;
     [SerializeField] private float wheatGrowthInterval = 1f;
     [SerializeField] private float wheatCurrentTimeGrowth = 0f;
+    [SerializeField] private Image imageToFill;
     [SerializeField] private List<GameObject> statesWheat = new(5);
 
     [Header("Harvest")] 

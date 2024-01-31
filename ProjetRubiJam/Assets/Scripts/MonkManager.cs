@@ -209,6 +209,8 @@ public class MonkManager : MonoBehaviour
         }
         else
         {
+            if (_eventsToPlay.Count == 0) return;
+            
             _currentEvent = _eventsToPlay[Random.Range(0, _eventsToPlay.Count)];
             _currentEvent.StartEvent();
             ShowTextEvent();
