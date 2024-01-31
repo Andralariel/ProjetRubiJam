@@ -50,6 +50,10 @@ public class MonkManager : MonoBehaviour
     [SerializeField] private Event loveEvent;
     [SerializeField] private Event faithEvent;
     [SerializeField] private List<Event> otherEvents;
+
+    [HideInInspector] public bool insurrection;
+    [HideInInspector] public bool famine;
+    [HideInInspector] public bool terreur;
     
     public List<PlayerController> playerList;
     public List<GameObject> pointForChickens;
@@ -132,6 +136,7 @@ public class MonkManager : MonoBehaviour
             if (_eventTimer < eventDurations + minDurationBetweenEvents) return;
             _eventTimer = 0;
             _playingAnEvent = false;
+            _currentEvent.EndEvent();
         }
         else
         {

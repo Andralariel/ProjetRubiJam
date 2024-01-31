@@ -36,9 +36,17 @@ public class WheatField : InteractableObj
     
     void Update()
     {
-        GrowWheat();
-        if (!_playerIsInteracting) return;
-        HarvestWheat();
+        if (MonkManager.instance.insurrection)
+        {
+            wheatGrowth = 0;
+            wheatHarvestCurrentTime = 0;
+        }
+        else
+        {
+            GrowWheat();
+            if (!_playerIsInteracting) return;
+            HarvestWheat();
+        }
     }
 
     public override void PressAction(PlayerController player)
@@ -137,5 +145,6 @@ public class WheatField : InteractableObj
             }
         }
     }
+    
     
 }

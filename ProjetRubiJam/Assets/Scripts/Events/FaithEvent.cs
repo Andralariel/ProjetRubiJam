@@ -6,12 +6,12 @@ namespace Events
     {
         public override void StartEvent()
         {
-            Debug.Log("Start of FaithEvent");
+            MonkManager.instance.terreur = true;
         }
 
         public override void EndEvent()
         {
-            Debug.Log("End of FaithEvent");
+            MonkManager.instance.terreur = false;
         }
     }
 }
