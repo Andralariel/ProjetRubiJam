@@ -38,7 +38,6 @@ public class Pray : InteractableObj
     
     void Start()
     {
-        vfxpraying.Reinit();
         canSpawnPeons = true;
         canPray = true;
     }
@@ -117,6 +116,7 @@ public class Pray : InteractableObj
             {
                 if (!ispraying)
                 {
+                    vfxpraying.Reinit();
                     vfxpraying.SetFloat("PrayingTime", prayDuration-currentTimerPray);
                     vfxpraying.Play();
                     ispraying = true;
