@@ -60,7 +60,7 @@ MonoBehaviour:
   maxCoffin: 20
   coffinList: []
   coffinInterval: 15
-  currentTimerCoffin: 0
+  currentTimerCoffin: 12
   offsetX: {x: -2, y: 2}
   offsetZ: {x: 0, y: 2}
   quarternion: {x: 0, y: 0, z: 0, w: 0}
