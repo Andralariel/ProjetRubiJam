@@ -249,12 +249,12 @@ MonoBehaviour:
   - {fileID: 8719745598998854165}
   - {fileID: 6092902265469894092}
   - {fileID: 7075694219178120432}
-  sizeCart: 4
   isWaiting: 0
   travelDuration: 5
   currentTravelTime: 0
   travelSpeed: 1
   bellScript: {fileID: 0}
+  cart: {fileID: 6071562274422390922}
 --- !u!136 &2711655567379177950
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -480,6 +480,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d392ac64fcb264ea69ee7fa995f8ff, type: 3}
+--- !u!1 &6071562274422390922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18d392ac64fcb264ea69ee7fa995f8ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 6378201435998338523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6848098256206715440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18d392ac64fcb264ea69ee7fa995f8ff,
