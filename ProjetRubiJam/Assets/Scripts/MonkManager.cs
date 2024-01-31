@@ -105,6 +105,7 @@ public class MonkManager : MonoBehaviour
 
             RandomWheatSpawn();
         }
+        Time.timeScale = 0;
     }
     
     private void Update()
@@ -291,6 +292,8 @@ public class MonkManager : MonoBehaviour
         gameStopped = false;
         mainMenu.SetActive(false);
         gameUI.SetActive(true);
+
+        Time.timeScale = 1;
     }
 
     public void Credits()
