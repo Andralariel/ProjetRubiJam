@@ -159,7 +159,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Tilling: 0.05
+    - _Tilling: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _color: 1
