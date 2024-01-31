@@ -30,6 +30,7 @@ public class Tomb : InteractableObj
 
     [Header("VFX")] 
     [SerializeField] private ParticleSystem vfxdirt;
+    [SerializeField] private ParticleSystem vfxghost;
 
     private bool isDirt;
     
@@ -93,6 +94,7 @@ public class Tomb : InteractableObj
                 imageToFill.enabled = false;
                 Debug.Log("hole dug");
                 ChangeHoleState();
+                vfxghost.Play();
                 canDig = false;
                 canCover = true;
                 

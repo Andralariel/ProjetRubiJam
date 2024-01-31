@@ -21,7 +21,8 @@ public class Barrel : MonoBehaviour
     public bool isAlcohol = false;
 
     [HideInInspector] public CellarTriggerZone cellar;
-    
+
+    [SerializeField] private ParticleSystem vfxready;
     void Start()
     {
         canBrew = true;
@@ -87,6 +88,7 @@ public class Barrel : MonoBehaviour
         {
             //Debug.Log("glou");
             barrelStates[2].SetActive(true);
+            vfxready.Play();
         }
     }
 }
