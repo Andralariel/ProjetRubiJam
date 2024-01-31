@@ -11,6 +11,8 @@ public class MonkManager : MonoBehaviour
 
     [Header("Common")]
     [SerializeField] private TextMeshProUGUI textEvents;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private int gameDurationInSeconds = 300;
     [SerializeField] private float jaugeDecreaseInterval = 5f;
     [SerializeField] private float currentTimeBeforeDecrease;
     [SerializeField] private float tickBufferAfterIncrease = 2;
@@ -56,6 +58,10 @@ public class MonkManager : MonoBehaviour
     private float _eventTimer;
     private bool _playingAnEvent;
     
+    private float _generalTimer;
+
+    private bool _gameStopped;
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -73,15 +79,37 @@ public class MonkManager : MonoBehaviour
 
             _eventsToPlay = new List<Event>();
             _eventTimer = -minDurationBetweenEvents;
+            _generalTimer = gameDurationInSeconds;
+            UpdateTimerText();
         }
     }
     
     private void Update()
     {
+        if (_gameStopped) return;
+        GeneralTimerUpdate();
         EventTimer();
         JaugeManager();
     }
 
+    private void GeneralTimerUpdate()
+    {
+        _generalTimer -= Time.deltaTime;
+        if (_generalTimer <= 0)
+        {
+            _generalTimer = 0;
+            EndGame();
+        }
+        UpdateTimerText();
+    }
+
+    private void UpdateTimerText()
+    {
+        var minutes = (int)_generalTimer / 60;
+        var seconds = (int)_generalTimer % 60;
+        timerText.text = minutes + ":" + seconds;
+    }
+    
     private void EventTimer()
     {
         _eventTimer += Time.deltaTime;
@@ -142,11 +170,13 @@ public class MonkManager : MonoBehaviour
 
     void EndGame()
     {
+        _gameStopped = true;
         textEvents.text = "Game over";
         DOTween.KillAll();
+        Debug.Log("Tween is created");
         DOTween.defaultTimeScaleIndependent = true;
-        textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,0.5f));
         Time.timeScale = 0;
+        textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f));
     }
 
     private void StartEvent()

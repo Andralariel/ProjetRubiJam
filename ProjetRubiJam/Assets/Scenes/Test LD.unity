@@ -16645,6 +16645,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: gameDurationInSeconds
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: jaugeDecreaseInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434782212644442859, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 5683221256232982624, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: m_Name
