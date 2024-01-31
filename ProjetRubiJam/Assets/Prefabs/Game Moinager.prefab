@@ -1734,15 +1734,16 @@ MonoBehaviour:
   gaugeMoney: {fileID: 5740755157638094748}
   maxMoney: 50
   valueDecreaseMoney: 1
-  priceBarrel: 20
+  priceBarrel: 30
   gaugeLove: {fileID: 251740723321915007}
   maxLove: 50
   valueDecreaseLove: 1
-  loveIncrease: 20
+  loveWhenPray: 10
   gaugeFaith: {fileID: 8680742416917633911}
   maxFaith: 50
   valueDecreaseFaith: 1
-  faithIncrease: 20
+  faithWhenBonesBurned: 20
+  faithWhenCoffinCovered: 10
   moneyEvent: {fileID: 2424547427296163126}
   loveEvent: {fileID: 6660869541507586608}
   faithEvent: {fileID: 2893222236789207292}

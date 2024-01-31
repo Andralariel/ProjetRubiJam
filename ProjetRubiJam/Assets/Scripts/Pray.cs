@@ -93,6 +93,7 @@ public class Pray : InteractableObj
                 {
                     Destroy(peon);
                 }
+                MonkManager.instance.AddFaith(MonkManager.instance.loveWhenPray * peonsList.Count);
                 peonsList.Clear();
             }
             else
