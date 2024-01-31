@@ -38,6 +38,7 @@ public class Pray : InteractableObj
     
     void Start()
     {
+        vfxpraying.Reinit();
         canSpawnPeons = true;
         canPray = true;
     }
@@ -110,6 +111,7 @@ public class Pray : InteractableObj
                 peonsList.Clear();
                 imageToFill.enabled = true; 
                 ispraying = false;
+                vfxpraying.Reinit();
             }
             else
             {
