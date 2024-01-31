@@ -11,37 +11,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0540113
+      value: -61.84896
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1218376
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.0557194
+      value: 27.869043
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7589899
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.65110254
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 81.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
@@ -63,6 +63,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moyen Arbre
       objectReference: {fileID: 0}
+    - target: {fileID: 2667707984724581527, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 724bdaf9163a52b438056d61b74d1b66, type: 2}
+    - target: {fileID: 4648330408004254690, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddaad685044a2784c92d268772f77a51, type: 2}
     - target: {fileID: 5535216782655972394, guid: ddaccc8bbbbb1ad42ad7d6a38301fe24,
         type: 3}
       propertyPath: m_LocalScale.x
