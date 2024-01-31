@@ -573,7 +573,7 @@ MonoBehaviour:
   textEvents: {fileID: 47243796692817292}
   timerText: {fileID: 1384824807476827540}
   gameDurationInSeconds: 300
-  jaugeDecreaseInterval: 0.5
+  jaugeDecreaseInterval: 5
   currentTimeBeforeDecrease: 0
   tickBufferAfterIncrease: 2
   eventDurations: 20
