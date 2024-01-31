@@ -69,7 +69,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrelScript: {fileID: 3168334739834729670}
-  barrelParent: {fileID: 8441452061190195893}
 --- !u!1 &1855726219971047526
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +166,7 @@ MonoBehaviour:
   brewingSpeed: 1
   brewingCurrentTime: 0
   isAlcohol: 0
+  cellar: {fileID: 0}
 --- !u!54 &7467749044639850889
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,9 +175,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855726219971047526}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbObj: {fileID: 7467749044639850889}
   positionToHold: {x: 0, y: 3, z: 0}
-  forwardThrowForce: 10
-  upwardThrowForce: 5
+  forwardThrowForce: 20
+  upwardThrowForce: 10
   type: 2
 --- !u!1 &3732921625687775234
 GameObject:

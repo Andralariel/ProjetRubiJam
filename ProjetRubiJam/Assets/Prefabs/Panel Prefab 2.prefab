@@ -913,7 +913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjWheat
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8306418878902264921, guid: 76e2a9cca94dace41831d6fd05d797a7, type: 3}
+    - {fileID: -8589998156934007651, guid: 76e2a9cca94dace41831d6fd05d797a7, type: 3}
+    - {fileID: 3669321525183652623, guid: 76e2a9cca94dace41831d6fd05d797a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
