@@ -9976,7 +9976,7 @@ GameObject:
   - component: {fileID: 724237860}
   - component: {fileID: 724237859}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
