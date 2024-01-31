@@ -6,10 +6,10 @@ public class InteractableObj : MonoBehaviour
     internal PlayerController _playerInteracting;
     internal Transform _objTransform;
     
-    [SerializeField] private Rigidbody rbObj;
-    [SerializeField] private Vector3 positionToHold;
-    [SerializeField] private float forwardThrowForce = 10;
-    [SerializeField] private float upwardThrowForce = 5;
+    public Rigidbody rbObj;
+    public Vector3 positionToHold;
+    public float forwardThrowForce = 10;
+    public float upwardThrowForce = 5;
     public Objets type = Objets.None;
 
     private void Awake()
