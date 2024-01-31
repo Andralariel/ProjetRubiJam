@@ -2447,6 +2447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin Spawner Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2532995233106357810, guid: e8ec9de21e68ccf43a2f9197eca9a526,
+        type: 3}
+      propertyPath: coffinInterval
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7589231593567582407, guid: e8ec9de21e68ccf43a2f9197eca9a526,
         type: 3}
       propertyPath: m_LocalPosition.x

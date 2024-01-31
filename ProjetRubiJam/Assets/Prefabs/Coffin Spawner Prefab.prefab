@@ -59,7 +59,7 @@ MonoBehaviour:
   currentNbCoffin: 0
   maxCoffin: 20
   coffinList: []
-  coffinInterval: 10
+  coffinInterval: 15
   currentTimerCoffin: 0
   offsetX: {x: -2, y: 2}
   offsetZ: {x: 0, y: 2}
