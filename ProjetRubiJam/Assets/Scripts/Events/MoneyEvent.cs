@@ -6,12 +6,12 @@ namespace Events
     {
         public override void StartEvent()
         {
-            Debug.Log("Start of MoneyEvent");
+            MonkManager.instance.famine = true;
         }
 
         public override void EndEvent()
         {
-            Debug.Log("End of MoneyEvent");
+            MonkManager.instance.famine = false;
         }
     }
 }
