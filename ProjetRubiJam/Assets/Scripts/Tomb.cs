@@ -108,6 +108,7 @@ public class Tomb : InteractableObj
 
                 hasCoffin = false;
                 Destroy(currentCoffin);
+                MonkManager.instance.AddFaith(MonkManager.instance.faithWhenCoffinCovered);
             }
         }
     }

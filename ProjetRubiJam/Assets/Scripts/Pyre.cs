@@ -19,6 +19,7 @@ public class Pyre : MonoBehaviour
         Debug.Log("Par le feu tu seras sanctifié");
         Destroy(other.gameObject);
         nbBonesBurned++;
+        MonkManager.instance.AddFaith(MonkManager.instance.faithWhenBonesBurned);
 
         //impact sur la jauge de foi ?
 

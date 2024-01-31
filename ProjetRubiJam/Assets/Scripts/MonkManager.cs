@@ -30,19 +30,20 @@ public class MonkManager : MonoBehaviour
     [SerializeField] private Image gaugeMoney;
     [SerializeField] private float maxMoney = 50f;
     [SerializeField] private float valueDecreaseMoney = 1f;
-    public int priceBarrel = 20;
+    public int priceBarrel = 30;
     
     [Header("Amour du peuple")]
     [SerializeField] private Image gaugeLove;
     [SerializeField] private float maxLove = 50f;
     [SerializeField] private float valueDecreaseLove= 1f;
-    public int loveIncrease = 20;
+    public int loveWhenPray = 10;
     
     [Header("Foi envers Dieu")]
     [SerializeField] private Image gaugeFaith;
     [SerializeField] private float maxFaith = 50f;
     [SerializeField] private float valueDecreaseFaith = 1f;
-    public int faithIncrease = 20;
+    public int faithWhenBonesBurned = 20;
+    public int faithWhenCoffinCovered = 10;
 
     [Header("Events")]
     [SerializeField] private Event moneyEvent;
