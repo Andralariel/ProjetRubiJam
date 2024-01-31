@@ -30,7 +30,7 @@ public class Tomb : InteractableObj
 
     void Start()
     {
-        
+        ChangeHoleState();
     }
     
     void Update()
@@ -38,6 +38,7 @@ public class Tomb : InteractableObj
         if (!_playerIsInteracting) return;
         DigHole();
         CoverHole();
+        
     }
 
     public override void PressAction(PlayerController player)
@@ -60,6 +61,7 @@ public class Tomb : InteractableObj
             {
                 if (diggingCurrentTime >= diggingInterval)
                 {
+                    Debug.Log("digging...");
                     diggingCurrentTime -= diggingInterval;
                     holeProgress -= diggingSpeed;
                 }
@@ -82,12 +84,13 @@ public class Tomb : InteractableObj
 
     void CoverHole()
     {
-        if (canCover)
+        if (canCover && hasCoffin)
         {
             if (holeProgress < 100)
             {
                 if (coverCurrentTime >= coverInterval)
                 {
+                    Debug.Log("covering...");
                     coverCurrentTime -= coverInterval;
                     holeProgress += coverSpeed;
                 }
@@ -104,6 +107,7 @@ public class Tomb : InteractableObj
                 canDig = true;
 
                 hasCoffin = false;
+                Destroy(currentCoffin);
             }
         }
     }
@@ -126,7 +130,8 @@ public class Tomb : InteractableObj
     void SpawnBones()
     {
         int index = Random.Range(0, listsPropsBones.Count);
-        Instantiate(listsPropsBones[index], bonesSpawnPoint.position, Quaternion.identity, gameObject.transform);
+        var boneClone = Instantiate(listsPropsBones[index], bonesSpawnPoint.position, Quaternion.identity, gameObject.transform);
+        boneClone.SetActive(true);
     }
     
 }
