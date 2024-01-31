@@ -2397,6 +2397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Moinager
       objectReference: {fileID: 0}
+    - target: {fileID: 8249038932989681899, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1639487184}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
