@@ -27,6 +27,11 @@ public class Tomb : InteractableObj
     [SerializeField] private List<GameObject> listsPropsBones;
     [SerializeField] private Transform bonesSpawnPoint;
     //[SerializeField] private Vector3 bonesSpawnOffset = new (0, 1, 0);
+
+    [Header("VFX")] 
+    [SerializeField] private ParticleSystem vfxdirt;
+
+    private bool isDirt;
     
     private bool _playerIsInteracting;
 
@@ -52,6 +57,8 @@ public class Tomb : InteractableObj
     public override void ReleaseAction()
     {
         _playerIsInteracting = false;
+        vfxdirt.Stop();
+        isDirt = false;
     }
 
     void DigHole()
@@ -72,10 +79,17 @@ public class Tomb : InteractableObj
                 else
                 {
                     diggingCurrentTime += Time.deltaTime;
+                    if (!isDirt)
+                    {
+                        vfxdirt.Play();
+                        isDirt = true;
+                    }
                 }
             }
             else if (holeProgress <= 0)
             {
+                vfxdirt.Stop();
+                isDirt = false;
                 imageToFill.enabled = false;
                 Debug.Log("hole dug");
                 ChangeHoleState();
@@ -105,6 +119,11 @@ public class Tomb : InteractableObj
                 else
                 {
                     coverCurrentTime += Time.deltaTime;
+                    if (!isDirt)
+                    {
+                        vfxdirt.Play();
+                        isDirt = true;
+                    }
                 }
             }
             else if (holeProgress >= 100)
@@ -114,6 +133,8 @@ public class Tomb : InteractableObj
                 canCover = false;
                 canDig = true;
                 imageToFill.enabled = false;
+                vfxdirt.Stop();
+                isDirt = false;
 
                 hasCoffin = false;
                 Destroy(currentCoffin);
