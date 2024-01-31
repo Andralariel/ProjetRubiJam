@@ -1173,7 +1173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4564910706789671760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1214,14 +1214,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6006650e4de0a244b424062f0805fcc, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2385,7 +2385,7 @@ MonoBehaviour:
   textEvents: {fileID: 47243796692817292}
   timerText: {fileID: 1384824807476827540}
   gameDurationInSeconds: 300
-  jaugeDecreaseInterval: 5
+  jaugeDecreaseInterval: 2
   currentTimeBeforeDecrease: 0
   tickBufferAfterIncrease: 2
   eventDurations: 20
@@ -2413,6 +2413,10 @@ MonoBehaviour:
   terreur: 0
   playerList: []
   pointForChickens: []
+  imageForEvents: {fileID: 1482175484413740036}
+  famineSprite: {fileID: 21300000, guid: f6006650e4de0a244b424062f0805fcc, type: 3}
+  insurrectionSprite: {fileID: 21300000, guid: 8988dcfd0827f5d40a3137478dc9e751, type: 3}
+  terreurSprite: {fileID: 21300000, guid: 38cd971cf53c7af4d8596ff5ca98fbc1, type: 3}
   wheatFields:
   - {fileID: 0}
   - {fileID: 0}

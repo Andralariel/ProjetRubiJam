@@ -1,4 +1,4 @@
-using UnityEngine;
+using DG.Tweening;
 
 namespace Events
 {
@@ -6,7 +6,10 @@ namespace Events
     {
         public override void StartEvent()
         {
-            MonkManager.instance.terreur = true;
+            var manager = MonkManager.instance;
+            manager.terreur = true;
+            manager.imageForEvents.sprite = manager.terreurSprite;
+            manager.imageForEvents.DOFade(1, 3).OnComplete(()=>manager.imageForEvents.DOFade(0, 3));
         }
 
         public override void EndEvent()
