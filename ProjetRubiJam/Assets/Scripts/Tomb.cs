@@ -35,8 +35,7 @@ public class Tomb : InteractableObj
     
     void Update()
     {
-        //if (!_playerIsInteracting) return;
-        Debug.Log("??");
+        if (!_playerIsInteracting) return;
         DigHole();
         CoverHole();
         
