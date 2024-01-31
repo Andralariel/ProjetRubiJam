@@ -5,14 +5,15 @@ using UnityEngine.UI;
 public class WheatField : InteractableObj
 {
     [Header("Growth")] 
-    [SerializeField] public float wheatGrowth = 100;
+    public float wheatGrowth = 100;
+    [SerializeField] private float maxWheatGrowth = 100f;
     public bool canWheatGrow = true;
     [SerializeField] private float wheatGrowthSpeed = 10f;
     [SerializeField] private float wheatGrowthInterval = 1f;
-    [SerializeField] private float wheatCurrentTimeGrowth = 0f;
+    public float wheatCurrentTimeGrowth = 0f;
     [SerializeField] private Image imageToFill;
     [SerializeField] private List<GameObject> statesWheat = new(5);
-
+    
     [Header("Harvest")] 
     public bool canWheatHarvest = false;
     [SerializeField] private float wheatHarvestSpeed = 1f;
@@ -65,7 +66,7 @@ public class WheatField : InteractableObj
     {
         if (canWheatGrow)
         {
-            if (wheatGrowth < 100)
+            if (wheatGrowth < maxWheatGrowth)
             {
                 if (wheatCurrentTimeGrowth >= wheatGrowthInterval)
                 {
@@ -78,7 +79,7 @@ public class WheatField : InteractableObj
                     wheatCurrentTimeGrowth += Time.deltaTime;
                 }
             }
-            else if (wheatGrowth >= 100f)
+            else if (wheatGrowth >= maxWheatGrowth)
             {
                 Debug.Log("wheat grown");
                 canWheatGrow = false;
@@ -145,6 +146,7 @@ public class WheatField : InteractableObj
             }
         }
     }
+
     
     
 }
