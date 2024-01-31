@@ -16,6 +16,7 @@ public class Cart : MonoBehaviour
 
     [Header("Return")] 
     [SerializeField] private Bell bellScript;
+    [SerializeField] private GameObject cart;
     
     void Start()
     {
@@ -36,7 +37,7 @@ public class Cart : MonoBehaviour
 
     public void AddBarrelToCart(GameObject gb)
     {
-        gb.transform.parent = gameObject.transform;
+        gb.transform.parent = cart.transform;
         barrelsOnCart.Add(gb);
         gb.transform.position = posBarrel[barrelsOnCart.Count - 1].transform.position;
     }
@@ -48,7 +49,7 @@ public class Cart : MonoBehaviour
             if (barrelsOnCart.Count > 0)
             {
                 MonkManager.instance.AddMoney(barrelsOnCart.Count * MonkManager.instance.priceBarrel);
-                //move Cart forward
+                cart.SetActive(false);
                 isWaiting = false;
                 Debug.Log("Cart gone");
             }
@@ -76,7 +77,7 @@ public class Cart : MonoBehaviour
 
     void CartReturn()
     {
-        //move Cart backward
+        cart.SetActive(true);
         
         for (int i = 0; i < barrelsOnCart.Count; i++)
         {
