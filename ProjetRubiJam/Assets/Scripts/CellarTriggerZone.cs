@@ -25,7 +25,7 @@ public class CellarTriggerZone : MonoBehaviour
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             var otherTransform = other.transform;
             otherTransform.position = transform.position + posOffset;
-            otherTransform.rotation = new Quaternion(rotationOffset.x,rotationOffset.y,rotationOffset.z,0);
+            otherTransform.rotation = Quaternion.Euler(rotationOffset.x,rotationOffset.y,rotationOffset.z);
 
         }
     }
