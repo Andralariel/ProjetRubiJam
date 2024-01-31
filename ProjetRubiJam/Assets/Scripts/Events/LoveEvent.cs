@@ -6,12 +6,12 @@ namespace Events
     {
         public override void StartEvent()
         {
-            Debug.Log("Start of LoveEvent");
+            MonkManager.instance.insurrection = true;
         }
 
         public override void EndEvent()
         {
-            Debug.Log("End of LoveEvent");
+            MonkManager.instance.insurrection = false;
         }
     }
 }
