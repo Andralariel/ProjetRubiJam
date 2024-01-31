@@ -18,6 +18,7 @@ public class Pray : InteractableObj
     [SerializeField] private int maxPeons = 100;
     [SerializeField] private List<int> rangeNbPeons = new(2){1,4};
     [SerializeField] private float peonsInterval = 10f;
+    [SerializeField] private float peonsIntervalWhenTerror = 3f;
     [SerializeField] private float currentTimerPeons = 0f;
     
     [SerializeField] private Vector2 offsetX = new(-2, 2);
@@ -33,6 +34,7 @@ public class Pray : InteractableObj
 
     private bool ispraying;
     private bool _playerIsInteracting;
+    private float _currentInterval;
     
     void Start()
     {
@@ -43,10 +45,11 @@ public class Pray : InteractableObj
     
     void Update()
     {
+        _currentInterval = MonkManager.instance.terreur ? peonsIntervalWhenTerror : peonsInterval;
         SpawnPeons();
-        
-        if (!_playerIsInteracting) return;
-        DonnerAmourAuxPeons();
+
+        if (!_playerIsInteracting) currentTimerPray = 0;
+        else DonnerAmourAuxPeons();
     }
     
     public override void PressAction(PlayerController player)
@@ -70,7 +73,7 @@ public class Pray : InteractableObj
         if (currentNbPeons > maxPeons) return;
         if (canSpawnPeons)
         {
-            if (currentTimerPeons >= peonsInterval)
+            if (currentTimerPeons >= _currentInterval)
             {
                 currentTimerPeons = 0;
                 for (int i = 0; i < Random.Range(rangeNbPeons[0], rangeNbPeons[1]+1); i++)
