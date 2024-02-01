@@ -345,6 +345,7 @@ MonoBehaviour:
   upwardThrowForce: 5
   type: 0
   wheatGrowth: 100
+  maxWheatGrowth: 100
   canWheatGrow: 1
   wheatGrowthSpeed: 10
   wheatGrowthInterval: 2
@@ -378,7 +379,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

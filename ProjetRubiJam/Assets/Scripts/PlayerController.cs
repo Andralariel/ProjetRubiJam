@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward.normalized*3,Color.blue);
         
-        if(Physics.BoxCast(transform.position,new Vector3(0,1,0.4f),transform.forward,out hit,Quaternion.LookRotation(transform.forward),3,layerMask))
+        if(Physics.BoxCast(transform.position + transform.forward*1f + Vector3.up*5,new Vector3(1,0,4f),Vector3.down,out hit,Quaternion.LookRotation(transform.forward),6,layerMask))
         {
             _currentObj = hit.transform.GetComponent<InteractableObj>();
             _currentObj.PressAction(this);
