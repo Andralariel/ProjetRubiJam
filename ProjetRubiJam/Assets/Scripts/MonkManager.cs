@@ -175,21 +175,21 @@ public class MonkManager : MonoBehaviour
             if (_moneyBuffer > 0) _moneyBuffer--;
             else
             {
-                _currentMoney -= valueDecreaseMoney;
+                _currentMoney -= valueDecreaseMoney*playerList.Count;
                 if (_currentMoney <= 0) _currentMoney = 0;
             }
             
             if (_loveBuffer > 0) _loveBuffer--;
             else
             {
-                _currentLove -= valueDecreaseLove;
+                _currentLove -= valueDecreaseLove*playerList.Count;
                 if (_currentLove < 0) _currentLove = 0;
             }
             
             if (_faithBuffer > 0) _faithBuffer--;
             else
             {
-                _currentFaith -= valueDecreaseFaith;
+                _currentFaith -= valueDecreaseFaith*playerList.Count;
                 if (_currentFaith < 0) _currentFaith = 0;
             }
             
