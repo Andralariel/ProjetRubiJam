@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -210,17 +211,22 @@ public class MonkManager : MonoBehaviour
     void EndGame()
     {
         gameStopped = true;
-        //textEvents.text = "Game over";
         DOTween.KillAll();
-        //textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f).OnComplete(() => restartButton.SetActive(true)));
+        
+        StartCoroutine(Wait());
+    }
+    
+    private IEnumerator Wait()
+    {
         imageForEvents.sprite = gameoverSprite;
-        imageForEvents.DOFade(1, 1).OnComplete(EndingPlus);
+        var color = imageForEvents.color;
+        imageForEvents.color = new Color(color.r, color.g, color.b, 1);
+        yield return new WaitForSecondsRealtime(5f);
+        imageForEvents.color = new Color(color.r, color.g, color.b, 0);
+        Restart();
     }
 
-    void EndingPlus()
-    {
-        imageForEvents.DOFade(0.95f, 5).OnComplete(Restart);
-    }
+    
 
     private void StartEvent()
     {

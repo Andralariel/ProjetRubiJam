@@ -1,4 +1,5 @@
-using DG.Tweening;
+using System.Collections;
+using UnityEngine;
 
 namespace Events
 {
@@ -6,12 +7,20 @@ namespace Events
     {
         public override void StartEvent()
         {
+            StartCoroutine(Wait());
+        }
+
+        private IEnumerator Wait()
+        {
             var manager = MonkManager.instance;
             manager.famine = true;
             manager.imageForEvents.sprite = manager.famineSprite;
-            manager.imageForEvents.DOFade(1, 1).OnComplete(()=>manager.imageForEvents.DOFade(0, 5));
+            var color = manager.imageForEvents.color;
+            manager.imageForEvents.color = new Color(color.r, color.g, color.b, 1);
+            yield return new WaitForSecondsRealtime(5f);
+            manager.imageForEvents.color = new Color(color.r, color.g, color.b, 0);
         }
-
+        
         public override void EndEvent()
         {
             MonkManager.instance.famine = false;
