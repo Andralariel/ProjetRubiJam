@@ -25,6 +25,8 @@ public class WheatField : InteractableObj
     [SerializeField] private Transform wheatSpawnPoint;
     [SerializeField] private Vector3 wheatSpawnOffset = new (0, 1, 0);
 
+    [SerializeField] private GameObject fireVFX;
+
     private bool _playerIsInteracting;
     
     
@@ -41,9 +43,16 @@ public class WheatField : InteractableObj
         {
             wheatGrowth = 0;
             wheatHarvestCurrentTime = 0;
+            fireVFX.SetActive(true);
+            statesWheat[0].SetActive(false);
+            statesWheat[1].SetActive(false);
+            statesWheat[2].SetActive(false);
+            statesWheat[3].SetActive(false);
+            statesWheat[4].SetActive(false);
         }
         else
         {
+            fireVFX.SetActive(false);
             GrowWheat();
             if (!_playerIsInteracting) return;
             HarvestWheat();

@@ -249,7 +249,7 @@ MonoBehaviour:
   peonsList: []
   peonSpawnPoint: {fileID: 7056356964595699273}
   canSpawnPeons: 0
-  maxPeons: 100
+  maxPeons: 30
   rangeNbPeons: 0100000004000000
   peonsInterval: 10
   peonsIntervalWhenTerror: 3
