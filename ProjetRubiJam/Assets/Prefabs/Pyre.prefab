@@ -14738,8 +14738,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4972543752373253802}
-  - component: {fileID: 2960021105489208952}
   - component: {fileID: 6748532177209993661}
+  - component: {fileID: 793102183243873191}
   m_Layer: 0
   m_Name: Pyre
   m_TagString: Untagged
@@ -14765,8 +14765,22 @@ Transform:
   - {fileID: 8086325529077294789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2960021105489208952
-SphereCollider:
+--- !u!114 &6748532177209993661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363084131538304750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0814962960467424e9c3f87bfa285e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbBonesBurned: 0
+  fireBurst: {fileID: 7821747042921289997}
+--- !u!136 &793102183243873191
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14783,23 +14797,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6748532177209993661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363084131538304750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0814962960467424e9c3f87bfa285e4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nbBonesBurned: 0
-  fireBurst: {fileID: 7821747042921289997}
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Height: 4.8874884
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7602857028543198613
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,8 +15453,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.81
-  m_Height: 2.33
+  m_Radius: 1
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0.22, z: 0}
 --- !u!4 &5624311182666211348 stripped

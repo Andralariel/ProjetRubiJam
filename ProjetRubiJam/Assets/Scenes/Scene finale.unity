@@ -3691,6 +3691,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1384824807476827540, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280301657
+      objectReference: {fileID: 0}
     - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: wheatFields.Array.data[0]
