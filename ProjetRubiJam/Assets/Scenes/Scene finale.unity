@@ -3503,26 +3503,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 251740723321915007, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.8627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 251740723321915007, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 251740723321915007, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 251740723321915007, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 383712602301008800, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3608,81 +3588,16 @@ PrefabInstance:
       propertyPath: pointForChickens.Array.data[2]
       value: 
       objectReference: {fileID: 1296903669}
-    - target: {fileID: 2146630321566984524, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146630321566984524, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146630321566984524, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2584584857900118210, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5683221256232982624, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: m_Name
       value: Game Moinager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740755157638094748, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.8627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740755157638094748, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740755157638094748, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525480933272684979, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1152
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525480933272684979, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983501616301088119, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8249038932989681899, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1639487184}
-    - target: {fileID: 8680742416917633911, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.8627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8680742416917633911, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8680742416917633911, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
