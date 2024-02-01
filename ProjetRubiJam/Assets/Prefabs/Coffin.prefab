@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2707819521455631921}
-  - component: {fileID: 3724456610251683269}
   - component: {fileID: 3169028089886772852}
   - component: {fileID: 6207486550853458546}
   - component: {fileID: 7250609924715337114}
@@ -37,23 +36,6 @@ Transform:
   - {fileID: 6810067460915801454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3724456610251683269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3342016486627203524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c108dce8ab87a49becc33e6bf05a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rbObj: {fileID: 6207486550853458546}
-  positionToHold: {x: 0, y: 2, z: 0}
-  forwardThrowForce: 10
-  upwardThrowForce: 5
-  type: 4
 --- !u!114 &3169028089886772852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41014511d6a163e4391e2c38f14a8a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbObj: {fileID: 0}
+  rbObj: {fileID: 6207486550853458546}
   positionToHold: {x: 0, y: 2, z: 0}
-  forwardThrowForce: 20
-  upwardThrowForce: 10
+  forwardThrowForce: 12
+  upwardThrowForce: 5
   type: 4
   coffinMesh: {fileID: 105968001640220314}
   coffinCollider: {fileID: 7250609924715337114}
