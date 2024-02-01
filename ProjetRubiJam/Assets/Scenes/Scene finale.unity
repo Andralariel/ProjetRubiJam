@@ -3553,15 +3553,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1384824807476827540, guid: 2368f1076c9a727489b640199eb15a9b,
+    - target: {fileID: 871422747787020799, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
-      propertyPath: m_text
-      value: 5:00
+      propertyPath: m_LocalRotation.w
+      value: 0.9990483
       objectReference: {fileID: 0}
-    - target: {fileID: 1384824807476827540, guid: 2368f1076c9a727489b640199eb15a9b,
+    - target: {fileID: 871422747787020799, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
-      propertyPath: m_fontStyle
-      value: 1
+      propertyPath: m_LocalRotation.z
+      value: -0.043619405
+      objectReference: {fileID: 0}
+    - target: {fileID: 871422747787020799, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -515
+      objectReference: {fileID: 0}
+    - target: {fileID: 871422747787020799, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300491718563891631, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
@@ -3585,11 +3600,6 @@ PrefabInstance:
       objectReference: {fileID: 1485825253}
     - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
-      propertyPath: pointForChickens.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1388286688267538739, guid: 2368f1076c9a727489b640199eb15a9b,
-        type: 3}
       propertyPath: pointForChickens.Array.data[0]
       value: 
       objectReference: {fileID: 583737301}
@@ -3603,15 +3613,60 @@ PrefabInstance:
       propertyPath: pointForChickens.Array.data[2]
       value: 
       objectReference: {fileID: 1296903669}
+    - target: {fileID: 2112942315595913454, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -518
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143670188213403860, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427261927802689311, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707612553576397997, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976568925660422317, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27
+      objectReference: {fileID: 0}
     - target: {fileID: 5683221256232982624, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
       propertyPath: m_Name
       value: Game Moinager
       objectReference: {fileID: 0}
-    - target: {fileID: 5683221256232982624, guid: 2368f1076c9a727489b640199eb15a9b,
+    - target: {fileID: 6650877302204750241, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_LocalRotation.w
+      value: 0.9990483
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650877302204750241, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650877302204750241, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650877302204750241, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.043619405
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650877302204750241, guid: 2368f1076c9a727489b640199eb15a9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8249038932989681899, guid: 2368f1076c9a727489b640199eb15a9b,
         type: 3}
