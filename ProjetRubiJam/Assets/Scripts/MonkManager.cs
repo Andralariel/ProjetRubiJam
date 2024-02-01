@@ -61,6 +61,7 @@ public class MonkManager : MonoBehaviour
     public Sprite famineSprite; 
     public Sprite insurrectionSprite; 
     public Sprite terreurSprite;
+    public Sprite gameoverSprite;
 
     [Header("Random Wheat")] 
     [SerializeField] private List<WheatField> wheatFields;
@@ -203,9 +204,16 @@ public class MonkManager : MonoBehaviour
     void EndGame()
     {
         gameStopped = true;
-        textEvents.text = "Game over";
+        //textEvents.text = "Game over";
         DOTween.KillAll();
-        textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f).OnComplete(() => restartButton.SetActive(true)));
+        //textEvents.DOFade(0, 0.01f).OnComplete(() => textEvents.DOFade(1,2f).OnComplete(() => restartButton.SetActive(true)));
+        imageForEvents.sprite = gameoverSprite;
+        imageForEvents.DOFade(1, 1).OnComplete(EndingPlus);
+    }
+
+    void EndingPlus()
+    {
+        imageForEvents.DOFade(0.95f, 5).OnComplete(Restart);
     }
 
     private void StartEvent()

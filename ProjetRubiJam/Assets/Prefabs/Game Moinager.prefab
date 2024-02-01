@@ -2417,6 +2417,7 @@ MonoBehaviour:
   famineSprite: {fileID: 21300000, guid: f6006650e4de0a244b424062f0805fcc, type: 3}
   insurrectionSprite: {fileID: 21300000, guid: 8988dcfd0827f5d40a3137478dc9e751, type: 3}
   terreurSprite: {fileID: 21300000, guid: 38cd971cf53c7af4d8596ff5ca98fbc1, type: 3}
+  gameoverSprite: {fileID: 21300000, guid: 7a5fe065e9c969b4f819f35d03b28b64, type: 3}
   wheatFields:
   - {fileID: 0}
   - {fileID: 0}
