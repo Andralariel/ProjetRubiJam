@@ -18,7 +18,7 @@ namespace Events
             manager.imageForEvents.sprite = manager.terreurSprite;
             var color = manager.imageForEvents.color;
             manager.imageForEvents.color = new Color(color.r, color.g, color.b, 1);
-            yield return new WaitForSecondsRealtime(5f);
+            yield return new WaitForSecondsRealtime(3f);
             manager.imageForEvents.color = new Color(color.r, color.g, color.b, 0);
         }
 

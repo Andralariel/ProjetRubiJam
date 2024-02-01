@@ -205,7 +205,7 @@ public class MonkManager : MonoBehaviour
     private void CheckJauges()
     {
         if(_currentMoney==0 && _currentLove == 0 && _currentFaith == 0) EndGame();
-        else if(_currentMoney < maxMoney/3 || _currentLove < maxLove/3 || _currentFaith < maxFaith/3) StartEvent();
+        else if(_currentMoney ==0 || _currentLove ==0 || _currentFaith ==0) StartEvent();
     }
 
     void EndGame()
@@ -231,15 +231,13 @@ public class MonkManager : MonoBehaviour
     private void StartEvent()
     {
         if (_playingAnEvent) return;
-
-        _firstEvent = true;
-        _playingAnEvent = true;
+        
         _eventTimer = 0;
         _eventsToPlay.Clear();
         
-        if(_currentMoney < maxMoney/3) _eventsToPlay.Add(moneyEvent);
-        if(_currentLove < maxLove/3) _eventsToPlay.Add(loveEvent);
-        if(_currentFaith < maxFaith/3) _eventsToPlay.Add(faithEvent);
+        if(_currentMoney == 0) _eventsToPlay.Add(moneyEvent);
+        if(_currentLove == 0) _eventsToPlay.Add(loveEvent);
+        if(_currentFaith == 0) _eventsToPlay.Add(faithEvent);
 
         if (otherEvents.Count > 0)
         {
@@ -249,12 +247,16 @@ public class MonkManager : MonoBehaviour
                 _currentEvent.StartEvent();
                 otherEvents.Remove(_currentEvent);
                 //ShowTextEvent();
+                _firstEvent = true;
+                _playingAnEvent = true;
             }
             else
             {
                 _currentEvent = _eventsToPlay[Random.Range(0, _eventsToPlay.Count)];
                 _currentEvent.StartEvent();
                 //ShowTextEvent();
+                _firstEvent = true;
+                _playingAnEvent = true;
             }
         }
         else
@@ -264,6 +266,8 @@ public class MonkManager : MonoBehaviour
             _currentEvent = _eventsToPlay[Random.Range(0, _eventsToPlay.Count)];
             _currentEvent.StartEvent();
             //ShowTextEvent();
+            _firstEvent = true;
+            _playingAnEvent = true;
         }
     }
 
