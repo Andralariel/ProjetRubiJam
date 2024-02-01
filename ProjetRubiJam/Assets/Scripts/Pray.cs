@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using Random = UnityEngine.Random;
 
 public class Pray : InteractableObj
 {
@@ -31,6 +34,9 @@ public class Pray : InteractableObj
 
     [Header("VFX")] 
     [SerializeField] private VisualEffect vfxpraying;
+    [SerializeField] private ParticleSystem vfxpop;
+
+    [SerializeField] private List<GameObject> listvfxpop;
 
     private bool ispraying;
     private bool _playerIsInteracting;
@@ -104,8 +110,15 @@ public class Pray : InteractableObj
                 currentTimerPray = 0;
                 foreach (var peon in peonsList)
                 {
+                    var clonepop = Instantiate(vfxpop,peon.transform.position,quaternion.identity);
+                    clonepop.gameObject.SetActive(true);
+                    listvfxpop.Add(clonepop.gameObject);
+                    clonepop.Play();
+                    vfxpop.Play();
                     Destroy(peon);
+                    
                 }
+                DestroyVfx();
                 MonkManager.instance.AddLove(MonkManager.instance.loveWhenPray * peonsList.Count);
                 peonsList.Clear();
                 imageToFill.enabled = true; 
@@ -132,5 +145,18 @@ public class Pray : InteractableObj
             }
         }
     }
-    
+
+    void DestroyVfx()
+    {
+        StartCoroutine(WaitDestroy());
+    }
+
+    IEnumerator WaitDestroy()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        foreach (var vfx in listvfxpop)
+        {
+            Destroy(vfx);
+        }
+    }
 }
