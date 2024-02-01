@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 6167448310933803822}
   - component: {fileID: 5912143041819629935}
   - component: {fileID: 2333830163299142314}
-  - component: {fileID: 3026627104114816734}
   m_Layer: 0
   m_Name: Stick (8)
   m_TagString: Untagged
@@ -128,27 +127,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3026627104114816734
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2676012298270229480}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2720513424059980762
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +138,6 @@ GameObject:
   - component: {fileID: 4951345614348602310}
   - component: {fileID: 8910029692810019945}
   - component: {fileID: 3165093575943025814}
-  - component: {fileID: 5753679120135460274}
   m_Layer: 0
   m_Name: Stick (2)
   m_TagString: Untagged
@@ -233,27 +210,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5753679120135460274
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720513424059980762}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3704520070602939526
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +221,6 @@ GameObject:
   - component: {fileID: 8552443554451230286}
   - component: {fileID: 7168787376838681894}
   - component: {fileID: 6850866522134710303}
-  - component: {fileID: 7583892915631128952}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -338,27 +293,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7583892915631128952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3704520070602939526}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5195149517094581221
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +304,6 @@ GameObject:
   - component: {fileID: 7425632769784454738}
   - component: {fileID: 6670046136243321395}
   - component: {fileID: 1482164423672257150}
-  - component: {fileID: 1865182581522823873}
   m_Layer: 0
   m_Name: Stick (5)
   m_TagString: Untagged
@@ -443,27 +376,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1865182581522823873
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195149517094581221}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5669079484492931610
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +387,6 @@ GameObject:
   - component: {fileID: 7484902476531934971}
   - component: {fileID: 7406301715790356954}
   - component: {fileID: 1112400935330411178}
-  - component: {fileID: 7170367655943240959}
   m_Layer: 0
   m_Name: Stick (7)
   m_TagString: Untagged
@@ -548,27 +459,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7170367655943240959
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5669079484492931610}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6000867809240403582
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +470,6 @@ GameObject:
   - component: {fileID: 7701934853807006870}
   - component: {fileID: 979754926928124953}
   - component: {fileID: 4486955131056089057}
-  - component: {fileID: 9127300165426723196}
   m_Layer: 0
   m_Name: Stick (6)
   m_TagString: Untagged
@@ -653,27 +542,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9127300165426723196
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6000867809240403582}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7785893222402030915
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +553,6 @@ GameObject:
   - component: {fileID: 5736297866658952139}
   - component: {fileID: 8711590007655677006}
   - component: {fileID: 3405593106977218859}
-  - component: {fileID: 5229145820785653755}
   m_Layer: 0
   m_Name: Stick (3)
   m_TagString: Untagged
@@ -758,27 +625,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5229145820785653755
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7785893222402030915}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7841121070849789626
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +636,6 @@ GameObject:
   - component: {fileID: 6362275815419083198}
   - component: {fileID: 5997656462696353989}
   - component: {fileID: 2116543847392391798}
-  - component: {fileID: 4885810344917664667}
   m_Layer: 0
   m_Name: Stick (4)
   m_TagString: Untagged
@@ -863,27 +708,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4885810344917664667
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841121070849789626}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8547983855579164264
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +719,6 @@ GameObject:
   - component: {fileID: 5772721223586023417}
   - component: {fileID: 7869555096635447242}
   - component: {fileID: 6729151750811836487}
-  - component: {fileID: 4434490518828602781}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -968,27 +791,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4434490518828602781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8547983855579164264}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8934027619980346310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +802,6 @@ GameObject:
   - component: {fileID: 85798628546503771}
   - component: {fileID: 8325767886637778755}
   - component: {fileID: 8275957449429459279}
-  - component: {fileID: 7373399803352878040}
   m_Layer: 0
   m_Name: Stick (9)
   m_TagString: Untagged
@@ -1073,27 +874,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7373399803352878040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8934027619980346310}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5125356625646936430
 PrefabInstance:
   m_ObjectHideFlags: 0
