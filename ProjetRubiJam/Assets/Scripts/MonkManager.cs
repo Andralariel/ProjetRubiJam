@@ -13,7 +13,6 @@ public class MonkManager : MonoBehaviour
 
     [Header("Common")]
     [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject creditMenu;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject restartButton;
     [SerializeField] private TextMeshProUGUI textEvents;
@@ -105,7 +104,6 @@ public class MonkManager : MonoBehaviour
 
             mainMenu.SetActive(true);
             gameUI.SetActive(false);
-            creditMenu.SetActive(false);
             restartButton.SetActive(false);
             gameStopped = true;
 
@@ -322,7 +320,6 @@ public class MonkManager : MonoBehaviour
 
     public void Credits()
     {
-        creditMenu.SetActive(true);
         mainMenu.SetActive(false);
     }
 
@@ -333,7 +330,6 @@ public class MonkManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        creditMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 
