@@ -137,7 +137,15 @@ public class MonkManager : MonoBehaviour
     {
         var minutes = (int)_generalTimer / 60;
         var seconds = (int)_generalTimer % 60;
-        timerText.text = minutes + ":" + seconds;
+        if (seconds < 10)
+        {
+            timerText.text = minutes + ":0" + seconds;
+        }
+        else
+        {
+            timerText.text = minutes + ":" + seconds;
+        }
+        
     }
     
     private void EventTimer()
